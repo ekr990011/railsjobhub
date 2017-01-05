@@ -39,11 +39,19 @@ namespace :freelance do
     "Ruby Forum", "Hire Ruby on Rails Developers on Freelancer", "\n            \n                \n            \n            \n                \n    \n\n\n                Signup to start earning\n                \n                    \n                        Are you a Ruby on Rails Developer? You could be earning money\n                        working on these jobs!\n                    \n                \n                \n                \n                    \n                \n            \n        ", 
     "1", "2", "3", "4", "5", "»", "›"]
     
-    @page.links.each do |x|
-      if @exclude_list.exclude?(x.text)
-        pp x
-      end
-    end
+    
+    #Block below is to get titles on the page & the job skills
+    # @page.links.each do |x|
+    #   if @exclude_list.exclude?(x.text) 
+    #     if x.uri.to_s.include?("/projects/")
+    #       pp x.text
+    #     elsif x.uri.to_s.include?("/jobs/")
+    #       pp x.text
+    #     end
+    #   end
+    # end
+    
+    pp @page.search('//*[@id="project_table_static"]/tbody/tr[1]/td[2]')
    
   end
 end
