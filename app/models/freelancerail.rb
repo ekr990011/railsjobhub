@@ -1,0 +1,2 @@
+class Freelancerail < ApplicationRecord
+end

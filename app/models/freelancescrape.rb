@@ -1,0 +1,2 @@
+class Freelancescrape < ApplicationRecord
+end

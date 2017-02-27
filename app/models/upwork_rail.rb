@@ -1,0 +1,2 @@
+class UpworkRail < ApplicationRecord
+end
