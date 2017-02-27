@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227195529) do
+ActiveRecord::Schema.define(version: 20170227204352) do
 
   create_table "freelancerails", force: :cascade do |t|
     t.string   "title"
@@ -52,6 +52,24 @@ ActiveRecord::Schema.define(version: 20170227195529) do
   end
 
   create_table "upwork_rails", force: :cascade do |t|
+    t.string   "title"
+    t.string   "href"
+    t.text     "description"
+    t.string   "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "upwork_rubies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "href"
+    t.text     "description"
+    t.string   "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "upwork_scrapes", force: :cascade do |t|
     t.string   "title"
     t.string   "href"
     t.text     "description"
