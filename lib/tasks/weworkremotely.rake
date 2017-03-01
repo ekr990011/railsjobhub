@@ -14,8 +14,8 @@ namespace :wework do
       @link = @rows[@row].at('a').values.first #link rel href
       @row_element_count = @rows[@row].search('span').children.count
       @text_count = 0 #counter for row text extraction
-      while @text_count < @row_element_count
-        if @row_element_count == 4
+      while @text_count < @row_element_count #loop through row elements
+        if @row_element_count == 4 #if "new" tag is leading row
           case @text_count
             when 1
               @company = @rows[@row].search('span').children[@text_count].text
@@ -25,7 +25,7 @@ namespace :wework do
               @date = @rows[@row].search('span').children[@text_count].text
           end #end case
           @text_count += 1
-        else
+        else #if tag "new" is not leading row
           case @text_count
             when 0
               @company = @rows[@row].search('span').children[@text_count].text
@@ -36,13 +36,13 @@ namespace :wework do
            end #end case
         @text_count += 1
         end #end if
-      end
+      end #end while inner
       WeworkRail.create do |x|
        x.company = @company
        x.description = @description
        x.date = @date  
        x.link = ("https://weworkremotely.com" + @link)
-      end
+      end #end database creation
     @row += 1
     end #end while outer
   end #end task
