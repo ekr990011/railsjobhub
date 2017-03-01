@@ -1,0 +1,2 @@
+class WeworkRail < ApplicationRecord
+end

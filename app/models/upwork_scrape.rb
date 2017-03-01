@@ -1,0 +1,2 @@
+class UpworkScrape < ApplicationRecord
+end

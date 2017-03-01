@@ -1,0 +1,2 @@
+class UpworkRuby < ApplicationRecord
+end
