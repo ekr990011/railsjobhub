@@ -9,7 +9,7 @@ namespace :wework do
     @a.user_agent_alias = 'Mac Safari 4'
     @page = @a.get('https://weworkremotely.com/jobs/search?term=Ruby+on+Rails')
     @rows = @page.search('#category-2 > article > ul > li')
-    @row = 1
+    @row = 0
     while @row < (@rows.count - 1 ) 
       @link = @rows[@row].at('a').values.first #link rel href
       @row_element_count = @rows[@row].search('span').children.count
@@ -33,7 +33,7 @@ namespace :wework do
               @description = @rows[@row].search('span').children[@text_count].text
             when 2
               @date = @rows[@row].search('span').children[@text_count].text
-           end #end case
+          end #end case
         @text_count += 1
         end #end if
       end #end while inner
