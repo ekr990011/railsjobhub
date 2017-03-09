@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308184139) do
+ActiveRecord::Schema.define(version: 20170309193610) do
 
   create_table "freelancerails", force: :cascade do |t|
     t.string   "title"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 20170308184139) do
     t.text     "snippet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stack_jobs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "link"
+    t.string   "company"
+    t.string   "skills"
+    t.string   "date_posted"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "upwork_rails", force: :cascade do |t|

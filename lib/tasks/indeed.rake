@@ -4,12 +4,13 @@ namespace :indeed do
     require 'mechanize'
     
     @a = Mechanize.new
-    
-    # &start for more page requests 25 per page, so &start=25 for pg2
+    @a.user_agent_alias = 'Mac Safari 4'
+    # enforced 25 results per page limit
+    # @start for more page requests 25 per page, so &start=25 for pg2
     # @start for multiple results queing. 
     @start = 0
     @count = 0
-    while @count < 2
+    while @count < 3
       @page = @a.get("http://api.indeed.com/ads/apisearch?publisher=617637838187464&%20
       &q=Ruby+Rails&explvl=entry_level&sort=date&start=#{@start}&limit=25&latlong=1&co=us&userip=1.2.3.4
       &useragent=Mozilla/%2F4.0%28Firefox%29&v=2")
