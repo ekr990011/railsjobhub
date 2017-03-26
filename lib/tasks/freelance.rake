@@ -8,7 +8,7 @@ namespace :freelance do
     @page = @a.get('https://www.freelancer.com/jobs/Ruby_on_Rails/1/?cl=l-en')
       @rows = @page.search('#project_table_static > tbody > tr') #each job row
       @count = 0
-      pp# @rows[1].children[13].text.strip.sub(/\W*/, "")
+      # @rows[1].children[13].text.strip.sub(/\W*/, "")
       # 1,3,5,7,9,11,13
       while @rows[@count] != nil do
        @href = @rows[@count].children[1].at('a').first[1]  # href for job
