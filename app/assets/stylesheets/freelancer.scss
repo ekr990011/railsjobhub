@@ -1,3 +1,51 @@
 // Place all the styles related to the freelancer controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.box {
+  border-style: ridge;
+  color: white;
+  font-family: 'Josefin Slab', serif;
+  font-size: 1.2em;
+}
+
+.job-background {
+  background-color: #b3b3b3;
+  position: absolute;
+  height: 100%;
+}
+
+.job-title{
+  margin-bottom: 1%;
+  
+}
+
+.job-description {
+  margin-bottom: 1%;
+  //overflow-y: scroll;
+}
+
+.job-skills {
+  margin-bottom: 1%;
+  color: #00e6e6;
+  font-size: 0.95em;
+  text-align: center;
+}
+
+.job-start {
+  //color: #cc0000;
+}
+
+.job-finish {
+  //color: #cc0000;
+}
+
+.job-bids {
+  //color: #cc0000;
+}
+
+.job-budget {
+  //color: #cc0000;
+}

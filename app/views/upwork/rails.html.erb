@@ -1,0 +1,27 @@
+<div class="left-col col-xs-6">
+  <% @upworkrails_1.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.title}", "#{job.href}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12 job-description"><%= job.description %></span>
+      
+      <span class="col-xs-3"></span>
+      <span class="col-xs-9 job-start"><b><%= job.date %></b></span>
+    </div>
+  <% end %>
+</div>
+
+<div class="right-col col-xs-6">
+  <% @upworkrails_2.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.title}", "#{job.href}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12 job-description"><%= job.description %></span>
+      
+      <span class="col-xs-3"></span>
+      <span class="col-xs-9 job-start"><b><%= job.date %></b></span>
+    </div>
+  <% end %>
+</div>
