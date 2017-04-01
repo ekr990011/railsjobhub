@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   
   get 'stackjobs', to: 'stackjobs#rails'
 
+  resources :contacts, only: [:new, :create]
 end

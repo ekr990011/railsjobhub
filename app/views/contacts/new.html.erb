@@ -1,0 +1,22 @@
+<%= form_for :contact, url: contacts_path do |f| %>
+<div class="col-xs-12" id="contact-form">
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: "contact-form" %>
+  </p>
+  
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "contact-form" %>
+  </p>
+ 
+  <p id="contact-text">
+    <%= f.label :text %><br>
+    <%= f.text_area :text, class: "contact-form", rows: "6" %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Contact Me", id: "contact-submit" %>
+  </p>
+</div>
+<% end %>

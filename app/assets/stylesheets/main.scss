@@ -61,11 +61,51 @@ li > .dropdown-menu > li > a {
 // Main homepage
 
 #header-main {
-  
+  //background-color: white;
+  color: #ff1a1a;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#main-header {
+  font-family: 'Cinzel', serif;
+  font-style: oblique;
+  font-size: 4em;
+  color: #ff1a1a;
+  text-align: center;
 }
 
 #body-main {
-  align-content: center;
+  //background-color: white;
+  display: inline-block;
+}
+
+#jobs-list {
+  // float: none;
+  // margin: 0 auto;
+  text-align: center;
+  margin: auto;
+}
+
+#bottom-main {
+  display: inline-block;
+}
+
+#contact-header {
+  text-align: center;
+}
+
+#contact-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#support-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .blue-pill {
@@ -105,10 +145,4 @@ li > .dropdown-menu > li > a {
 #contact-me {
   font-size: 1.2em;
   color: #ffffff;
-}
-
-#bottom-main {
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
