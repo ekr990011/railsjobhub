@@ -1,0 +1,45 @@
+<div class="left-col col-xs-6">
+  <% @freelancer_1.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.title}", "#{job.href}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12 job-description"><%= job.description %></span>
+      <span class="col-xs-12 job-skills"><%= job.skills %></span>
+      
+      <span class="col-xs-3 job-start"><h4>Posted:</h5></span>
+      <span class="col-xs-3 job-finish"><h4>Expiration:</h5></span>
+      <span class="col-xs-3 job-bids"><h4>Bids:</h5></span>
+      <span class="col-xs-3 job-budget"><h4>Budget:</h5></span>
+        
+    
+      <span class="col-xs-3 job-start"><b><%= job.date_start %></b></span>
+      <span class="col-xs-3 job-finish"><b><%= job.date_finish %></b></span>
+      <span class="col-xs-3 job-bids"><b><%= job.bids %></b></span>
+      <span class="col-xs-3 job-budget"><b><%= job.budget %></b></span>
+    </div>
+  <% end %>
+</div>
+
+<div class="right-col col-xs-6">
+  <% @freelancer_2.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.title}", "#{job.href}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12 job-description"><%= job.description %></span>
+      <span class="col-xs-12 job-skills"><%= job.skills %></span>
+      
+      <span class="col-xs-3 job-start"><h4>Posted:</h5></span>
+      <span class="col-xs-3 job-finish"><h4>Expiration:</h5></span>
+      <span class="col-xs-3 job-bids"><h4>Bids:</h5></span>
+      <span class="col-xs-3 job-budget"><h4>Budget:</h5></span>
+        
+    
+      <span class="col-xs-3 job-start"><b><%= job.date_start %></b></span>
+      <span class="col-xs-3 job-finish"><b><%= job.date_finish %></b></span>
+      <span class="col-xs-3 job-bids"><b><%= job.bids %></b></span>
+      <span class="col-xs-3 job-budget"><b><%= job.budget %></b></span>
+    </div>
+  <% end %>
+</div>

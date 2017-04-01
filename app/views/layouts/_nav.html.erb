@@ -1,21 +1,33 @@
 <ul class="row nav nav-tabs navbar-inverse navbar-fixed-top" id="navbar-css">
-  <li class="navtabs">
-    <%= link_to "Freelancer", "freelancer#rails" %>
-  </li>
-  <li class="navtabs">
-    <%= link_to "Upwork", "upwork#rails" %>
-  </li>
-  <li class="navtabs">
-    <%= link_to "WeWorkRemotely", "weworkremotely#rails" %>
-  </li>
-  <li class="navtabs">
-    <a href="#">
-      Indeed
+  <li class="navtabs dropdown" id="nav-freelancer">
+    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Freelancer<span class="caret"></span>
     </a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><%= link_to "Rails", freelancer_rails_path %></li>
+      <li><%= link_to "Scrape", freelancer_scrape_path %></li>
+    </ul>
+  </li>
+  <li class="navtabs dropdown">
+    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Upwork<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><%= link_to "Rails", upwork_rails_path %></li>
+      <li><%= link_to "Scrape", upwork_scrape_path %></li>
+      <li><%= link_to "Ruby", upwork_ruby_path %></li>
+    </ul>
   </li>
   <li class="navtabs">
-    <a href="#">
-      Stack Jobs
-    </a>
+    <%= link_to "WeWorkRemotely", weworkremotely_path %>
+  </li>
+  <li class="navtabs">
+    <%= link_to "Indeed", indeed_path %>
+  </li>
+  <li class="navtabs">
+    <%= link_to "Stack Jobs", stackjobs_path %>
+  </li>
+  <li class="navtabs" id="home-navtab">
+    <%= link_to "Main", root_path %>
   </li>
 </ul>

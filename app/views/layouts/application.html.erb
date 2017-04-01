@@ -8,11 +8,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
     <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Josefin+Slab:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Revalia" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   </head>
 
   <body>
     <div class="container-fluid">
-      <%= render 'layouts/nav' %>
+      <% unless @nav_bar == nil %>
+        <%= render @nav_bar %>
+      <% end %>
         <%= yield %>
     </div>
   </body>

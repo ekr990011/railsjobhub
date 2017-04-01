@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// font-family: 'Cinzel', serif;
-// font-family: 'Josefin Slab', serif;
+// font-family: 'Cinzel', serif;  Title / Head look
+// font-family: 'Josefin Slab', serif;  regular clean look
+// font-family: 'Revalia', cursive;  coder looking
+// font-family: 'VT323', monospace;  coder looking even super old computer looking
 
 .container-fluid {
   
+}
+
+.left-col {
+  margin-top: 70px;
+}
+
+.right-col {
+  margin-top: 70px;
 }
 
 #navbar-css {
@@ -14,6 +24,28 @@
  font-style: bold;
  font-family: 'Cinzel', serif;
  //margin-bottom: 1%;
+}
+
+li > .dropdown-menu {
+  background-color: black;
+}
+
+li > .dropdown-menu > li > a {
+  color: #00e600;
+}
+
+#home-navtab {
+  position: absolute;
+  top: 0;
+  right: 1%;
+}
+
+#nav-freelancer {
+  position: relative;
+}
+
+.nav-tabs {
+  color: #00e600;
 }
 
 .navtabs > a {
@@ -26,4 +58,57 @@
 }
 
 
+// Main homepage
 
+#header-main {
+  
+}
+
+#body-main {
+  align-content: center;
+}
+
+.blue-pill {
+  color: #6666ff;
+  font-style: italic;
+  font-size: 1.09em;
+}
+
+.red-pill {
+  color: #ff1a1a;
+}
+
+#main-header {
+  font-family: 'Cinzel', serif;
+  font-style: oblique;
+  font-size: 4em;
+  color: #ff1a1a;
+  text-align: center;
+}
+
+#site-theory {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+.site-theory-headers {
+  font-family: 'VT323', monospace;
+  font-size: 2em;
+  color: #00e600
+}
+
+#about-me {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+#contact-me {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+#bottom-main {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

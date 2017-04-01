@@ -1,0 +1,27 @@
+<div class="left-col col-xs-6">
+  <% @stackjobsrails_1.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.title}", "#{job.link}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12"><h4><%= job.company %></h4></span>
+      <span class="col-xs-12 job-skills"><%= job.skills %></span>
+      
+      <span class="col-xs-3 job-start"><b><%= job.date_posted %></b></span>
+    </div>
+  <% end %>
+</div>
+
+<div class="right-col col-xs-6">
+  <% @stackjobsrails_2.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.title}", "#{job.link}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12"><h4><%= job.company %></h4></span>
+      <span class="col-xs-12 job-skills"><%= job.skills %></span>
+      
+      <span class="col-xs-3 job-start"><b><%= job.date_posted %></b></span>
+    </div>
+  <% end %>
+</div>
