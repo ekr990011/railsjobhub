@@ -2,8 +2,13 @@ namespace :upwork do
   desc "TODO"
   task rails: :environment do
     require 'mechanize'
+    
    
    # run for entry level rails jobs
+    @count = UpworkRail.count
+    @last = UpworkRail.last
+    @old_list = UpworkRail.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
     @page = @a.get('https://www.upwork.com/ab/feed/jobs/rss?contractor_tier=1&q=Ruby+on+Rails&sort=create_time+desc&api_params=1') 
@@ -14,6 +19,7 @@ namespace :upwork do
       @link = @rows[@row].elements.children[1].text #link
       @description = @rows[@row].elements.children[2].text.gsub(/\<.*\>/, " ").gsub(/\n/, "") #description
       @date = @rows[@row].elements.children[4].text.gsub(/ \+0000/, "")
+     
       
       UpworkRail.create do |x|
         x.title = @title
@@ -23,12 +29,18 @@ namespace :upwork do
       end
       @row += 1
     end
+    
+    @old_list.delete_all unless @count == 0
   end
     
   task scrape: :environment do
   require 'mechanize'
   
   #run a entry level scrape jobs
+  @count = UpworkScrape.count
+  @last = UpworkScrape.last
+  @old_list = UpworkScrape.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    
   @a = Mechanize.new
   @a.user_agent_alias = 'Mac Safari 4'
   @page = @a.get('https://www.upwork.com/ab/feed/jobs/rss?contractor_tier=1&q=Web+scraping&sort=create_time+desc&api_params=1')
@@ -48,12 +60,18 @@ namespace :upwork do
       end
       @row += 1
     end
+    
+    @old_list.delete_all unless @count == 0
   end
   
   task ruby: :environment do
   require 'mechanize'
   
   #run an entry level ruby jobs
+  @count = UpworkRuby.count
+  @last = UpworkRuby.last
+  @old_list = UpworkRuby.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+  
   @a = Mechanize.new
   @a.user_agent_alias = 'Mac Safari 4'
   @page = @a.get('https://www.upwork.com/ab/feed/jobs/rss?contractor_tier=1&q=Ruby&sort=create_time+desc&api_params=1')
@@ -73,6 +91,8 @@ namespace :upwork do
       end
       @row += 1
     end
+    
+    @old_list.delete_all unless @count == 0
   end
     
 end

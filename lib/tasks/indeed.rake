@@ -3,6 +3,10 @@ namespace :indeed do
   task rails: :environment do
     require 'mechanize'
     
+    @count = IndeedRail.count
+    @last = IndeedRail.last
+    @old_list = IndeedRail.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
     # enforced 25 results per page limit
@@ -43,7 +47,6 @@ namespace :indeed do
       @start += 25
     end
     
-    
-    
+    @old_list.delete_all unless @count == 0
   end
 end
