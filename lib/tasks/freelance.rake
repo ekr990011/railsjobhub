@@ -3,6 +3,10 @@ namespace :freelance do
   task rails: :environment do
     require 'mechanize'
     
+    @count = Freelancerail.count
+    @last = Freelancerail.last
+    @old_list = Freelancerail.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
     @page = @a.get('https://www.freelancer.com/jobs/Ruby_on_Rails/1/?cl=l-en')
@@ -59,10 +63,16 @@ namespace :freelance do
         x.budget = @budget
        end
       end
+      
+  @old_list.delete_all unless @count == 0
   end
   task scrape: :environment do
     
     require 'mechanize'
+    
+    @count = Freelancescrape.count
+    @last = Freelancescrape.last
+    @old_list = Freelancescrape.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -120,7 +130,8 @@ namespace :freelance do
         x.budget = @budget
        end
       end
-    
+      
+   @old_list.delete_all unless @count == 0  
    end
   
 end
