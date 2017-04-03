@@ -35,7 +35,7 @@ namespace :upwork do
   @rows = @page.search('item')
   @row = 0
     while @row < @rows.count
-      @title = @rows[@row].elements.children[0].text #title
+      @title = @rows[@row].elements.children[0].text.sub(" - Upwork", "") #title
       @link = @rows[@row].elements.children[1].text #link
       @description = @rows[@row].elements.children[2].text.gsub(/\<.*\>/, " ").gsub(/\n/, "") #description
       @date = @rows[@row].elements.children[4].text.gsub(/ \+0000/, "")
@@ -60,7 +60,7 @@ namespace :upwork do
   @rows = @page.search('item')
   @row = 0
     while @row < @rows.count
-      @title = @rows[@row].elements.children[0].text #title
+      @title = @rows[@row].elements.children[0].text.sub(" - Upwork", "") #title
       @link = @rows[@row].elements.children[1].text #link
       @description = @rows[@row].elements.children[2].text.gsub(/\<.*\>/, " ").gsub(/\n/, "") #description
       @date = @rows[@row].elements.children[4].text.gsub(/ \+0000/, "")
