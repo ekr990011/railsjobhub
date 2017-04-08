@@ -41,6 +41,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'twitter', '~> 5.3.1'
+gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'omniauth-twitter', '~> 1.0.1'
 
 group :development, :test do
