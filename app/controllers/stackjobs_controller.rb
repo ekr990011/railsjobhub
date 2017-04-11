@@ -2,6 +2,7 @@ class StackjobsController < ApplicationController
   before_action :nav_bar
   
   def rails
+    @location_tab = 'Rails:StackOverflow'
     #need to find by hour from database
     @stackjobs_count = StackJob.count
     @stackjobs_half = @stackjobs_count / 2

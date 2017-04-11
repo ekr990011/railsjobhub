@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :nav_bar
+  before_action :location_tab
   
   def new
     @contact = Contact.new
@@ -21,5 +22,9 @@ class ContactsController < ApplicationController
   
   def nav_bar
     @nav_bar = 'layouts/nav'
+  end
+  
+  def location_tab
+    @location_tab = 'Contacts'
   end
 end

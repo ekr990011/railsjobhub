@@ -5,9 +5,7 @@ namespace :upwork do
     
    
    # run for entry level rails jobs
-    @count = UpworkRail.count
-    @last = UpworkRail.last
-    @old_list = UpworkRail.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    @old_list = UpworkRail.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -30,16 +28,14 @@ namespace :upwork do
       @row += 1
     end
     
-    @old_list.delete_all unless @count == 0
+    @old_list.delete_all
   end
     
   task scrape: :environment do
   require 'mechanize'
   
   #run a entry level scrape jobs
-  @count = UpworkScrape.count
-  @last = UpworkScrape.last
-  @old_list = UpworkScrape.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+  @old_list = UpworkScrape.all
     
   @a = Mechanize.new
   @a.user_agent_alias = 'Mac Safari 4'
@@ -61,16 +57,14 @@ namespace :upwork do
       @row += 1
     end
     
-    @old_list.delete_all unless @count == 0
+    @old_list.delete_all
   end
   
   task ruby: :environment do
   require 'mechanize'
   
   #run an entry level ruby jobs
-  @count = UpworkRuby.count
-  @last = UpworkRuby.last
-  @old_list = UpworkRuby.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+  @old_list = UpworkRuby.all
   
   @a = Mechanize.new
   @a.user_agent_alias = 'Mac Safari 4'
@@ -92,7 +86,7 @@ namespace :upwork do
       @row += 1
     end
     
-    @old_list.delete_all unless @count == 0
+    @old_list.delete_all
   end
     
 end

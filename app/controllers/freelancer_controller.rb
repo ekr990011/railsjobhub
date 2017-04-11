@@ -2,6 +2,7 @@ class FreelancerController < ApplicationController
   before_action :nav_bar
     
   def rails
+    @location_tab = 'Rails:Freelancer'
     #need to find by hour from database
     @freelance_count = Freelancerail.count
     @freelance_half = @freelance_count / 2
@@ -10,6 +11,7 @@ class FreelancerController < ApplicationController
   end
   
   def scrape
+    @location_tab = 'Scrape:Freelancer'
     @freelance_count = Freelancescrape.count
     @freelance_half = @freelance_count / 2
     @freelancer_1 = Freelancescrape.all[0...@freelance_half]

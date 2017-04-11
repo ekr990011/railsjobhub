@@ -3,9 +3,7 @@ namespace :freelance do
   task rails: :environment do
     require 'mechanize'
     
-    @count = Freelancerail.count
-    @last = Freelancerail.last
-    @old_list = Freelancerail.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    @old_list = Freelancerail.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -64,7 +62,7 @@ namespace :freelance do
        end
       end
       
-  @old_list.delete_all unless @count == 0
+  @old_list.delete_all
   end
   task scrape: :environment do
     
@@ -72,7 +70,7 @@ namespace :freelance do
     
     @count = Freelancescrape.count
     @last = Freelancescrape.last
-    @old_list = Freelancescrape.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    @old_list = Freelancescrape.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -131,7 +129,7 @@ namespace :freelance do
        end
       end
       
-   @old_list.delete_all unless @count == 0  
+   @old_list.delete_all  
    end
   
 end

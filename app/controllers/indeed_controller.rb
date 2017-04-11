@@ -1,7 +1,8 @@
 class IndeedController < ApplicationController
-  before_action :nav_bar  
+  before_action :nav_bar 
   
   def rails
+    @location_tab = 'Rails:Indeed'
     #need to find by hour from database
     
     #indeed likely to have  table cell data that should be looked at added/removed

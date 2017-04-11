@@ -2,6 +2,7 @@ class WeworkremotelyController < ApplicationController
   before_action :nav_bar
   
   def rails
+    @location_tab = 'Rails:WeWorkRemotely'
     #need to find by hour from database
     @wework_count = WeworkRail.count
     @wework_half = @wework_count / 2

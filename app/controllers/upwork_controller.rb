@@ -2,6 +2,7 @@ class UpworkController < ApplicationController
   before_action :nav_bar
   
   def rails
+    @location_tab = 'Rails:Upwork'
     #need to find by hour from database
     @upwork_count = UpworkRail.count
     @upwork_half = @upwork_count / 2
@@ -10,6 +11,7 @@ class UpworkController < ApplicationController
   end
   
   def scrape
+    @location_tab = 'Scrape:Upwork'
     @upwork_count = UpworkScrape.count
     @upwork_half = @upwork_count / 2
     @upworkscrape_1 = UpworkScrape.all[0...@upwork_half]
@@ -17,6 +19,7 @@ class UpworkController < ApplicationController
   end
   
   def ruby
+    @location_tab = 'Ruby:Upwork'
     @upwork_count = UpworkRuby.count
     @upwork_half = @upwork_count / 2
     @upworkruby_1 = UpworkRuby.all[0...@upwork_half]

@@ -3,9 +3,8 @@ namespace :stack do
   task rails: :environment do
     require 'mechanize'
     
-    @count = StackJob.count
-    @last = StackJob.last
-    @old_list = StackJob.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    
+    @old_list = StackJob.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -34,6 +33,6 @@ namespace :stack do
       @pg += 1
     end  #end while outer
     
-    @old_list.delete_all unless @count == 0
+    @old_list.delete_all
   end  #end task
 end  #end namespace

@@ -4,9 +4,7 @@ namespace :wework do
     require 'mechanize'
     #.gsub(/\n\s/, "")
     
-    @count = WeworkRail.count
-    @last = WeworkRail.last
-    @old_list = WeworkRail.where(id: [(@last.id - @count)..@last.id]) unless @count == 0
+    @old_list = WeworkRail.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -49,6 +47,6 @@ namespace :wework do
     @row += 1
     end #end while outer
     
-  @old_list.delete_all unless @count == 0
+  @old_list.delete_all
   end #end task
 end #end namespace
