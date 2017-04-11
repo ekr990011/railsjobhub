@@ -3,7 +3,6 @@ namespace :indeed do
   task rails: :environment do
     require 'mechanize'
     
-    @old_list = IndeedRail.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -45,6 +44,6 @@ namespace :indeed do
       @start += 25
     end
     
-    @old_list.delete_all
+    IndeedRail.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end
 end

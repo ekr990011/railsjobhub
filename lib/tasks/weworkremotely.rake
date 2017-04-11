@@ -4,7 +4,6 @@ namespace :wework do
     require 'mechanize'
     #.gsub(/\n\s/, "")
     
-    @old_list = WeworkRail.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -47,6 +46,6 @@ namespace :wework do
     @row += 1
     end #end while outer
     
-  @old_list.delete_all
+  WeworkRail.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end #end task
 end #end namespace

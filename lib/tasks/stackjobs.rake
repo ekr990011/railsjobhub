@@ -4,7 +4,6 @@ namespace :stack do
     require 'mechanize'
     
     
-    @old_list = StackJob.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -33,6 +32,6 @@ namespace :stack do
       @pg += 1
     end  #end while outer
     
-    @old_list.delete_all
+    StackJob.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end  #end task
 end  #end namespace

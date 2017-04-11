@@ -5,7 +5,6 @@ namespace :upwork do
     
    
    # run for entry level rails jobs
-    @old_list = UpworkRail.all
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
@@ -28,14 +27,13 @@ namespace :upwork do
       @row += 1
     end
     
-    @old_list.delete_all
+    UpworkRail.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end
     
   task scrape: :environment do
   require 'mechanize'
   
   #run a entry level scrape jobs
-  @old_list = UpworkScrape.all
     
   @a = Mechanize.new
   @a.user_agent_alias = 'Mac Safari 4'
@@ -57,14 +55,13 @@ namespace :upwork do
       @row += 1
     end
     
-    @old_list.delete_all
+    UpworkScrape.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end
   
   task ruby: :environment do
   require 'mechanize'
   
   #run an entry level ruby jobs
-  @old_list = UpworkRuby.all
   
   @a = Mechanize.new
   @a.user_agent_alias = 'Mac Safari 4'
@@ -86,7 +83,7 @@ namespace :upwork do
       @row += 1
     end
     
-    @old_list.delete_all
+    UpworkRuby.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end
     
 end
