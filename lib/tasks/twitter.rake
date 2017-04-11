@@ -25,7 +25,7 @@ end
       
       # pp"#{select_tweet_freelancer_rails}"
       pp"#{truncated_tweet}"
-      # client.update("#{select_tweet_freelancer_rails} https://goo.gl/n3LLHT")
+      # client.update("#{select_tweet_freelancer_rails} https://goo.gl/pqZ8DF ")
       sleep(rand(3..15))
     
    
@@ -37,7 +37,7 @@ end
        
         pp"#{select_tweet_freelancer_scrape}"
         pp"#{truncated_tweet_freelancer_scrape}"
-        client.update("#{truncated_tweet_freelancer_scrape} https://goo.gl/nvbMd7")
+        client.update("#{truncated_tweet_freelancer_scrape} https://goo.gl/cYkSdC")
         sleep(rand(3..15))
        
      
@@ -49,7 +49,7 @@ end
        
         # pp"#{select_tweet_upwork_rails}"
         pp"#{truncated_tweet_upwork_rails}"
-        client.update("#{truncated_tweet_upwork_rails} https://goo.gl/0gG17g ")
+        client.update("#{truncated_tweet_upwork_rails} https://goo.gl/U2svdA")
         sleep(rand(3..15))
         
         
@@ -61,7 +61,7 @@ end
        
         # pp"#{select_tweet_upwork_scrape}"
         pp"#{truncated_tweet_upwork_scrape}"
-        client.update("#{truncated_tweet_upwork_scrape} https://goo.gl/8q09Wu")
+        client.update("#{truncated_tweet_upwork_scrape} https://goo.gl/ioT3v8")
         sleep(rand(3..15))
         
         
@@ -73,7 +73,7 @@ end
        
         # pp"#{select_tweet_upwork_ruby}"
         pp"#{truncated_tweet_upwork_ruby}"
-        client.update("#{truncated_tweet_upwork_ruby} https://goo.gl/SxDKBN")
+        client.update("#{truncated_tweet_upwork_ruby} https://goo.gl/OJzDtz")
         sleep(rand(3..15))
         
       
@@ -85,7 +85,7 @@ end
        
         # pp"#{select_tweet_wework}"
         pp"#{truncated_tweet_wework}"
-        client.update("#{truncated_tweet_wework} https://goo.gl/jnu9cG")
+        client.update("#{truncated_tweet_wework} https://goo.gl/d0fvy1")
         sleep(rand(3..15))
        
        
@@ -97,7 +97,7 @@ end
        
         # pp"#{select_tweet_indeed}"
         pp"#{truncated_tweet_indeed}"
-        client.update("#{truncated_tweet_indeed} https://goo.gl/HLVKM8")
+        client.update("#{truncated_tweet_indeed} https://goo.gl/e7sJbU")
         sleep(rand(3..15))
       
 
@@ -109,7 +109,7 @@ end
        
         # pp"#{select_tweet_stackjob}"
         pp"#{truncated_tweet_stackjob}"
-        client.update("#{truncated_tweet_stackjob} https://goo.gl/9sQOcg")
+        client.update("#{truncated_tweet_stackjob} https://goo.gl/swR5PL")
         sleep(rand(3..15))
 
 
@@ -122,7 +122,7 @@ end
       array_railsjobhub << 'Rails Job Hub the Amazon of Rails developer job sites'
       
       random_number_railsjobhub = rand(0..3) 
-      client.update("#{array_railsjobhub[random_number_railsjobhub]} https://goo.gl/n3LLHT")
+      client.update("#{array_railsjobhub[random_number_railsjobhub]} https://goo.gl/A6Ulou")
     
       
   
