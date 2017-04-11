@@ -6,10 +6,10 @@ namespace :twitter do
    require 'twitter'
  
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "cSJdhk2cI08FUwfvAujCF3uzP"
-  config.consumer_secret     = "HGyJtcM4kITFERk3EaTCq343abUusYWsIkX54FPt1wZeO9yWjZ"
-  config.access_token        = "849370429794004993-fD8TfISA3rVhi4TD9P3xrvwHqDEFIEQ"
-  config.access_token_secret = "OWQk3AzBMyn6AUKSb0ztkVo4O0r1cabZNHXZa8RWwR8Qt"
+  config.consumer_key        = ENV["CONSUMER_KEY"]
+  config.consumer_secret     = ENV["CONSUMER_SECRET"]
+  config.access_token        = ENV["ACCESS_TOKEN"]
+  config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
 end
     
     
