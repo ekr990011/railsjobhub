@@ -43,7 +43,7 @@ end
      
       # Upwork rails tweet
       array_upwork_rails = UpworkRail.all
-      random_number_upwork_rails = rand(0..(UpworkRail.count -1))
+      random_number_upwork_rails = rand(0..(UpworkRail.count - 1))
       select_tweet_upwork_rails = "#{array_upwork_rails[random_number_upwork_rails].title}:  #{array_upwork_rails[random_number_upwork_rails].description}"
       truncated_tweet_upwork_rails = select_tweet_upwork_rails.truncate(110)
        
@@ -121,8 +121,10 @@ end
       array_railsjobhub << 'Rails Job Hub the developer friendly job site'
       array_railsjobhub << 'Rails Job Hub the Amazon of Rails developer job sites'
       
+  
       random_number_railsjobhub = rand(0..3) 
-      client.update("#{array_railsjobhub[random_number_railsjobhub]} https://goo.gl/A6Ulou")
+      railsjobhubtweet = array_railsjobhub[random_number_railsjobhub]
+      client.update("#{railsjobhubtweet} https://goo.gl/A6Ulou")
     
       
   
