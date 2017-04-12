@@ -84,7 +84,7 @@ end
       truncated_tweet_wework = select_tweet_wework.truncate(110)
        
         # pp"#{select_tweet_wework}"
-        pp"#{truncated_tweet_wework}"
+        #pp"#{truncated_tweet_wework}"
         client.update("#{truncated_tweet_wework} https://goo.gl/d0fvy1")
         sleep(rand(3..15))
        
