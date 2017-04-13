@@ -1,0 +1,21 @@
+<h1 class="white">STEP 1: CREATE YOUR AD</h1>
+<div class="form form-control">
+  <%= form_for @contract_job do |f| %>
+  
+  <%= f.label :title, class: "white" %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :description, class: "white" %>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.label :email, class: "white" %>
+  <%= f.text_field :email %>
+  <br>
+  
+  
+  <% end %>
+  
+  
+</div>
+
+
