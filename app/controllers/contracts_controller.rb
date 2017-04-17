@@ -20,7 +20,6 @@ class ContractsController < ApplicationController
     if @contract_job.save
     
       redirect_to @contract_job
-      # '/'
       flash[:success] = "Thanks for the Input!"
     else
       redirect_to contract_show_path(@contract_job)
