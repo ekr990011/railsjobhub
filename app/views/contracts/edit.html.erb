@@ -1,8 +1,5 @@
+<% provide(:title, @contract_job.title) %>
 
-
-
-
-<h1>STEP 1: CREATE YOUR AD</h1>
 <div class="form form-control">
   
   <%= form_for @contract_job do |f| %>
@@ -17,9 +14,8 @@
       <% end %>
       </div>
     <% end %>
-    
-  
-  <%= f.label :title %><br>
+
+ <%= f.label :title %><br>
   <%= f.text_field :title, class: "form-control input-lg" %>
   <br>
   <%= f.label :description %><br>
@@ -27,14 +23,7 @@
   <br>
   <%= f.label :email %>
   <%= f.text_field :email, class: "form-control input-lg" %>
-  <br>
   
-   <%#  f.submit 'Preview', name: 'preview_button'  %>
-   <%= f.submit "Create Post", class: "btn btn-primary btn-lg" %>
+  <%= f.submit "Create Post", class: "btn btn-primary btn-lg" %>
   
-  <% end %>
-
-</div>
-  
-
-
+<% end %>

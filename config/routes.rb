@@ -17,5 +17,7 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
   
-  resources :contracts #add preview later
+  resources :contracts do #add preview later
+    get 'preview'
+  end
 end
