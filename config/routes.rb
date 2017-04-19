@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   resources :contracts do #add preview later
     get 'preview'
   end
+  
+  resources :charges, only: [:new, :create]
 end
