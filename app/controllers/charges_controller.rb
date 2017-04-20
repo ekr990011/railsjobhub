@@ -1,5 +1,7 @@
 class ChargesController < ApplicationController
   def new
+  #@contract_job = params[:contract_job_id]
+  @contract_job_id = Contract.find_by_id(session[:contract_job_id])
   end
 
   def create
