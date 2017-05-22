@@ -5,6 +5,7 @@ class ChargesController < ApplicationController
   end
 
   def create
+    begin
     # Amount in cents
     @amount = 1999
   
@@ -19,9 +20,16 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+    
+    if charge["paid"] == true
+      @paid = Contract.find(session[:contract_job_id])
+      @paid.update(expiration: "#{Time.now + 8.days}")
+    end
+    
   
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to charges_path
+    end
   end
 end

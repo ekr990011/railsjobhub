@@ -1,7 +1,14 @@
 class ContractsController < ApplicationController
+  before_action :nav_bar, only: [:index]
   
   def index
-  
+    @contracts = Contract.all.reverse_order
+    @valid_contracts_array = []
+    @contracts.each do |x|
+      unless (x.expiration.nil? || (x.expiration >= (Time.now + 8.days)))
+          @valid_contracts_array << x #[x.id, x.title, x.description, x.expiration] 
+      end
+    end
   end
   
   def new
@@ -48,5 +55,9 @@ class ContractsController < ApplicationController
   
   def contract_job_params
     params.require(:contract).permit(:title, :description, :email)
+  end
+  
+  def nav_bar
+    @nav_bar = 'layouts/nav'
   end
 end
