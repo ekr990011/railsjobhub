@@ -42,7 +42,7 @@ class ContractsController < ApplicationController
       redirect_to @contract_job
       flash[:success] = "Updated!"
     else
-      render edit_contract_path
+      redirect_to edit_contract_path(@contract_job)
       flash[:alert] = "Please provide input!"
     end
   end

@@ -1,23 +1,27 @@
+<div class="col-xs-7 col-xs-offset-2 create-contract">
 
+  <div class="col-xs-6 image-header-shit">
+   <%= image_tag("RailsJobHub.jpg", class: "img-responsive") %>
+  </div>
 
-
-
-<h1>STEP 1: CREATE YOUR AD</h1>
-<div class="form form-control">
+  <div class="col-xs-6 contract-job-explanation">
+    Your contract job listing will remain on this site for 7 days.  After seven days your listing will be 
+    removed.  You can always post your contract job listing for $19.99 for another 7 days.  
+  </div>
   
+  
+  
+    <h1 class="col-xs-12">STEP 1: CREATE YOUR AD</h1>
+  
+ 
+  
+  
+  
+  
+  
+  
+<div class="form-group col-xs-12">
   <%= form_for @contract_job do |f| %>
-    <% if @contract_job.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@contract_job.errors.count, "error") %> prohibited
-              this article from being saved:
-        </h2>
-      <% @contract_job.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </div>
-    <% end %>
-    
   
   <%= f.label :title %><br>
   <%= f.text_field :title, class: "form-control input-lg" %>
@@ -36,5 +40,5 @@
 
 </div>
   
-
+</div>
 

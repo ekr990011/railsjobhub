@@ -21,5 +21,7 @@ Rails.application.routes.draw do
     get 'preview'
   end
   
-  resources :charges, only: [:new, :create]
+  resource :charges, only: [:new, :create, :invoice] do
+    get 'invoice'
+  end
 end

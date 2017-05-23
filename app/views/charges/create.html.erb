@@ -1,2 +1,35 @@
-
-<h2>Thanks, you paid <strong>$19.99</strong>!</h2>
+<div class="col-xs-7 col-xs-offset-2">
+  
+  <div class="col-xs-7 col-xs-offset-2">
+  <div class="col-xs-6 row ">
+    <%= image_tag("RailsJobHub.jpg", class: "img-responsive") %>
+  </div>
+  
+  <div class="col-xs-12 invoice">
+   <h2>Thanks, you paid <strong>$19.99</strong>!</h2>
+  </div>
+  
+  <div class="col-xs-12 invoice">
+     Please Print this Out for Your Records
+  </div>
+  
+  <div class="col-xs-12 invoice">
+     Your email: <%= @contract_job_id.email %>
+  </div>
+  
+  <div class="col-xs-12 invoice">
+     Job Title: <%= @contract_job_id.title %>
+  </div>
+  
+  <div class="col-xs-12 invoice">
+     Job Description: <%= @contract_job_id.description %>
+  </div>
+  
+  <div class="col-xs-12 invoice">
+     Job Id: <%= @contract_job_id.id  %>
+  </div>
+  
+  
+  
+  
+</div>

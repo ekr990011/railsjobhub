@@ -1,24 +1,29 @@
-<br><br><br><br><br>
-
-contract job ID
-<%= @contract_job_id.email %>
-<br><br><br><br>
-
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
+<div class="col-xs-7 col-xs-offset-2 create-contract ">
+  <div class="col-xs-6 row ">
+   <%= image_tag("RailsJobHub.jpg", class: "img-responsive") %>
+  </div>
+  <div class="col-xs-12">
+    <h2 class="col-xs-4">Your Email:</h2>
+    <h3 class="col-xs-8"><%= @contract_job_id.email %></h3>
+  </div>
+  <div class="col-xs-12">
+    <%= form_tag charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span>Amount: $19.99</span>
+        </label>
+      </article>
+    
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="One Time Payment for 7 days"
+              data-amount="1999"
+              data-locale="auto"></script>
     <% end %>
-    <label class="amount">
-      <span>Amount: $19.99</span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="1999"
-          data-locale="auto"></script>
-<% end %>
+  </div>
+</div>

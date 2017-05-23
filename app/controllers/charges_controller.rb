@@ -1,6 +1,5 @@
 class ChargesController < ApplicationController
   def new
-  #@contract_job = params[:contract_job_id]
   @contract_job_id = Contract.find_by_id(session[:contract_job_id])
   end
 
@@ -31,5 +30,10 @@ class ChargesController < ApplicationController
       flash[:error] = e.message
       redirect_to charges_path
     end
+    @contract_job_id = Contract.find(session[:contract_job_id])
+  end
+  
+  def invoice
+    @contract_job_id = Contract.find(session[:contract_job_id])
   end
 end
