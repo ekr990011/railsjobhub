@@ -23,7 +23,19 @@
   <%= f.text_field :title, class: "form-control input-lg" %>
   <br>
   <%= f.label :description %><br>
-  <%= f.text_area :description, class: "form-control input-lg", rows: 8 %>
+  <%= f.text_area :description, class: "form-control input-lg wysihtml5", rows: 8 %>
+  
+   <script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
+</script>
+  
+  
   <br>
   <%= f.label :email %>
   <%= f.text_field :email, class: "form-control input-lg" %><br>

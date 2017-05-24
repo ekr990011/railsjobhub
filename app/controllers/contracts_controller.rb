@@ -9,6 +9,9 @@ class ContractsController < ApplicationController
           @valid_contracts_array << x #[x.id, x.title, x.description, x.expiration] 
       end
     end
+    @valid_array_count_half = @valid_contracts_array.count / 2
+    @valid_array_left = @valid_contracts_array[0...@valid_array_count_half]
+    @valid_array_right = @valid_contracts_array[@valid_array_count_half..-1]
   end
   
   def new

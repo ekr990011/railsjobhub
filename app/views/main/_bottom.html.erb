@@ -3,7 +3,7 @@
     <h2 class="site-theory-headers">Why are you here?</h2>
     <p>You, just like me have grown tired of the  <span class="blue-pill">blue pill</span>  on job sites.</p>
     <h2 class="site-theory-headers">Solution?</h2>
-    <p>Take the red pill and at least get some of your browser tabs back.</p> 
+    <p>Take the <span class="red-pill">red pill</span> and at least get some of your browser tabs back.</p> 
     <p>This is not a solution to keep you from going anywhere else.</p>
     <p>Instead it can enhance opportunities that are already there but cumbersome to manage.</p>
     <p>Join me and together we shall rule the time spent searching for Rails jobs.</p>
@@ -15,5 +15,10 @@
     <p>The joy of using Rails && A bit of an obsession with web scraping && The need for a job = All of this</p>
     <p>I went through the normal teach yourself to code route. Along the way I finally reached a point
     that I knew I should start looking for work. </p>
+  </div>
+  <div class="col-xs-2" id="contact-me">
+    <h2 class="site-theory-headers" id="contact-header">Contact</h2>
+    <%= button_to "Contact Me", new_contact_path, id: "contact-btn", class: "btn btn-lg btn-primary", method: :get %><br>
+    <button class="btn btn-lg btn-primary" id="support-btn">Support</button><br>
   </div>
 </div>

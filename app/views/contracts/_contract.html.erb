@@ -1,8 +1,18 @@
-<% @valid_contracts_array.each do |contract| %>
-<div class="col-xs-12 box">
-  <div class="col-xs-3"><%= contract.id %></div>
-  <div class="col-xs-3 job-title"><%= contract.title %></div>
-  <div class="col-xs-3 job-description"><%= truncate(contract.description, length: 700) %></div>
-  <div class="col-xs-3"><%= contract.expiration %></div>
+<div class="col-xs-6 left-col">
+  <% @valid_array_left.each do |contract| %>
+    <div class="col-xs-12 box">
+      <div class="col-xs-12 job-title"><h1 class="contracts-title"><%= contract.title %></h1></div>
+      <div class="col-xs-12 job-description"><%= truncate(contract.description, length: 700) %></div>
+      <div class="col-xs-4"><%= contract.expiration %></div>
+    </div>
+  <% end %>
 </div>
-<% end %>
+<div class="col-xs-6 right-col">
+  <% @valid_array_right.each do |contract| %>
+    <div class="col-xs-12 box">
+      <div class="col-xs-12 job-title"><h1 class="contracts-title"><%= contract.title %></h1></div>
+      <div class="col-xs-12 job-description"><%= truncate(contract.description, length: 700) %></div>
+      <div class="col-xs-4"><%= contract.expiration %></div>
+    </div>
+  <% end %>
+</div>

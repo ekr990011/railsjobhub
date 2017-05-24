@@ -71,8 +71,8 @@ li > .dropdown-menu > li > a {
   //background-color: white;
   color: #ff1a1a;
   text-align: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 1%;
+  margin-bottom: 3%;
 }
 
 #main-header {
@@ -123,6 +123,8 @@ li > .dropdown-menu > li > a {
 
 .red-pill {
   color: #ff1a1a;
+  font-style: italic;
+  font-size: 1.09em;
 }
 
 #main-header {
@@ -154,8 +156,17 @@ li > .dropdown-menu > li > a {
   color: #ffffff;
 }
 
+#railsjobhub > a {
+  color: red
+}
+
 
 
 .white {
   color: white;
+}
+
+
+.logo {
+  margin-bottom: 2%;
 }

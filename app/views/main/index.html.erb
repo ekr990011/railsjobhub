@@ -2,11 +2,11 @@
   <h1 id="main-header">Rails Job Hub</h1>
   <h2 id="main-description">Rails Ruby Webscraping</h2>
 </div>
-
-
-
-
 <div class="container col-xs-12" id="body-main">
+    <div class="logo col-xs-12 text-center">
+       <%= link_to image_tag('ThumbRailsJobHub.jpg'), "/contracts" %>
+    </div>
+  
   
 <ul class="list-inline" id="jobs-list" >
   <li class="dropdown">
@@ -38,31 +38,7 @@
      <%= link_to image_tag('StackOverflowJobs.PNG'), "/stackjobs" %>
   </li>
 </ul>
-
 </div>
-
-
 <div class="col-xs-12" id="bottom-main">
-  <div class="col-xs-5" id="site-theory">
-    <h2 class="site-theory-headers">Why are you here?</h2>
-    <p>You, just like me have grown tired of the  <span class="blue-pill">blue pill</span>  on job sites.</p>
-    <h2 class="site-theory-headers">Solution?</h2>
-    <p>Take the red pill and at least get some of your browser tabs back.</p> 
-    <p>This is not a solution to keep you from going anywhere else.</p>
-    <p>Instead it can enhance opportunities that are already there but cumbersome to manage.</p>
-    <p>Join me and together we shall rule the time spent searching for Rails jobs.</p>
-  </div>
-  <div class="col-xs-5" id="about-me">
-    <h2 class="site-theory-headers">Who am I?</h2>
-    <h4>A rails developer that wanted a more stream-lined way of looking at jobs.</h4>
-    <p>so...</p>
-    <p>The joy of using Rails && A bit of an obsession with web scraping && The need for a job = All of this</p>
-    <p>I went through the normal teach yourself to code route. Along the way I finally reached a point
-    that I knew I should start looking for work. </p>
-  </div>
-  <div class="col-xs-2" id="contact-me">
-    <h2 class="site-theory-headers" id="contact-header">Contact</h2>
-    <%= button_to "Contact Me", new_contact_path, id: "contact-btn", class: "btn btn-lg btn-primary", method: :get %><br>
-    <button class="btn btn-lg btn-primary" id="support-btn">Support</button><br>
-  </div>
+  <%= render 'main/bottom' %>
 </div>

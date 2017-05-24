@@ -27,10 +27,21 @@
   <%= f.text_field :title, class: "form-control input-lg" %>
   <br>
   <%= f.label :description %><br>
-  <%= f.text_area :description, class: "form-control input-lg" %>
+  <%= f.text_area :description, class: "form-control input-lg wysihtml5" %>
   <br>
   <%= f.label :email %>
   <%= f.text_field :email, class: "form-control input-lg" %>
+  
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5({'toolbar':{ 'blockquote': true, 'html': false, 'image': false, 'lists': false}});
+    });
+
+  })
+</script>
+  
   <br>
   
    <%#  f.submit 'Preview', name: 'preview_button'  %>
