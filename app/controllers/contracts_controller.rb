@@ -5,7 +5,9 @@ class ContractsController < ApplicationController
     @contracts = Contract.all.reverse_order
     @valid_contracts_array = []
     @contracts.each do |x|
-      unless (x.expiration.nil? || (x.expiration >= (Time.now + 8.days)))
+      if x.expiration.nil?
+         
+      elsif (x.expiration.between?(Time.now, Time.now + 8.days))
           @valid_contracts_array << x #[x.id, x.title, x.description, x.expiration] 
       end
     end
@@ -30,7 +32,7 @@ class ContractsController < ApplicationController
       redirect_to @contract_job
       flash[:success] = "Thanks for the Input!"
     else
-      redirect_to contract_show_path(@contract_job)
+      redirect_to new_contract_path
       flash[:danger] = "Oops please enter something."
     end
   end
