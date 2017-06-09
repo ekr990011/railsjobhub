@@ -1,0 +1,29 @@
+<div class="col-xs-7 col-xs-offset-2 create-contract ">
+  <div class="col-xs-6 row ">
+   <%= image_tag("RailsJobHub.jpg", class: "img-responsive") %>
+  </div>
+  <div class="col-xs-12">
+    <h2 class="col-xs-4">Your Email:</h2>
+    <h3 class="col-xs-8"><%= @job_id.email %></h3>
+  </div>
+  <div class="col-xs-12">
+    <%= form_tag job_charges_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+        <label class="amount">
+          <span>Amount: $199.00</span>
+        </label>
+      </article>
+    
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="One Time Payment for 7 days"
+              data-amount="19900"
+              data-locale="auto"></script>
+    <% end %>
+  </div>
+</div>

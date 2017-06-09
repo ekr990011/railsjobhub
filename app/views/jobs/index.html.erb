@@ -1,0 +1,8 @@
+<div class="col-xs-12" id="body-contracts">
+  <% if @valid_jobs_array.empty? %>
+    <%= render 'jobs/empty' %>
+  <% else %>
+    <%= render 'jobs/contract' %>
+  <% end %>
+</div>
+

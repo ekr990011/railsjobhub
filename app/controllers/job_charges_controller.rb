@@ -1,12 +1,12 @@
-class ChargesController < ApplicationController
+class JobChargesController < ApplicationController
   def new
-    @contract_job_id = Contract.find_by_id(session[:contract_job_id])
+    @job_id = Job.find_by_id(session[:job_id])
   end
   
   def create
     begin
     # Amount in cents
-    @amount = 1999
+    @amount = 19900
   
     customer = Stripe::Customer.create(
     :email => params[:stripeEmail],
@@ -21,8 +21,8 @@ class ChargesController < ApplicationController
     )
     
     if charge["paid"] == true
-      @paid = Contract.find(session[:contract_job_id])
-      @paid.update(expiration: "#{Time.now + 8.days}")
+      @paid = Job.find(session[:job_id])
+      @paid.update(expiration: "#{Time.now + 31.days}")
     end
     
   
@@ -30,10 +30,10 @@ class ChargesController < ApplicationController
       flash[:error] = e.message
       redirect_to charges_path
     end
-    @contract_job_id = Contract.find(session[:contract_job_id])
+    @job_id = Job.find(session[:job_id])
   end
   
   def invoice
-    @contract_job_id = Contract.find(session[:contract_job_id])
+    @job_id = Job.find(session[:job_id])
   end
 end

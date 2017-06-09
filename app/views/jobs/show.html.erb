@@ -1,4 +1,4 @@
-<% provide(:title, @contract_job.title) %>
+<% provide(:title, @job.title) %>
 <div class="col-xs-7 col-xs-offset-2 create-contract ">
   
   <div class="col-xs-12">
@@ -7,18 +7,18 @@
      </div>
   </div> 
   
-  <h1 class="col-xs-12 "><%= @contract_job.title %></h1>
+  <h1 class="col-xs-12 "><%= image_tag(@job.logo, class: "img-responsive") %><%= @job.title %></h1>
   
-  <p class="col-xs-12"><%= @contract_job.description.html_safe %></p>
+  <p class="col-xs-12"><%= @job.description.html_safe %></p>
+  
+  <p class="col-xs-12"><%= @job.applyinfo %></p>
   
   <div class="col-xs-12 buttons ">
-    <%= link_to edit_contract_path(@contract_job.id) do %>
+    <%= link_to edit_job_path(@job.id) do %>
       <button class="btn btn-lg btn-primary">Edit</button>
     <% end %>
-    <%= link_to :controller => "charges", action: "new" do %>
+    <%= link_to :controller => "job_charges", action: "new" do %>
       <button class="btn btn-lg btn-danger buttons-checkout">Looks Great! Go to Checkout</button>
     <% end %>
   </div>
-  
-
 </div>

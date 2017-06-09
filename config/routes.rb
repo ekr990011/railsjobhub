@@ -17,11 +17,17 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
   
+  resources :jobs
+  
   resources :contracts do #add preview later
     get 'preview'
   end
   
   resource :charges, only: [:new, :create, :invoice] do
+    get 'invoice'
+  end
+  
+  resource :job_charges, only: [:new, :create, :invoice] do
     get 'invoice'
   end
 end

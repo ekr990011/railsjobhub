@@ -1,0 +1,58 @@
+<% provide(:title, @job.title) %>
+<div class="col-xs-7 col-xs-offset-2 create-contract ">
+  <div class="col-xs-6 row ">
+   <%= image_tag("RailsJobHub.jpg", class: "img-responsive") %>
+  </div>
+
+<div class="form-group col-xs-12 ">
+  
+  <%= form_for @job do |f| %>
+    <% if @job.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@job.errors.count, "error") %> prohibited
+              this article from being saved:
+        </h2>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </div>
+    <% end %>
+
+ <%= f.label :title %><br>
+  <%= f.text_field :title, class: "form-control input-lg" %>
+  <br>
+  <%= f.label :description %><br>
+  <%= f.text_area :description, class: "form-control input-lg wysihtml5", rows: 8 %>
+  
+   <script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
+</script>
+  
+ 
+  
+  <br>
+  <%= f.label :email %>
+  <%= f.text_field :email, class: "form-control input-lg" %>
+  <br>
+   <%= f.label :Upload_Your_Logo %>
+  <%= f.file_field :logo, class: "" %>
+  <br>
+  <%= f.label :How_do_applicants_apply? %>
+  <%= f.text_field :applyinfo, class: "form-control input-lg" %>
+  <br>
+  
+  
+  
+  
+  
+  
+  <%= f.submit "Update Posting", class: "btn btn-primary btn-lg" %>
+  
+<% end %>

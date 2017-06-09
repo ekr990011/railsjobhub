@@ -3,12 +3,12 @@
    <%= image_tag("RailsJobHub.jpg", class: "img-responsive") %>
   </div>
   <div class="col-xs-6 contract-job-explanation">
-    Your contract job listing will remain on this site for 7 days.  After seven days your listing will be 
-    removed.  You can always post your contract job listing again for $19.99 for another 7 days.  
+    Your permanent job listing will remain on this site for 30 days.  After thirty days your listing will be 
+    removed.  You can always post your permanent job listing again for $199.00 for another 30 days.  
   </div>
     <h1 class="col-xs-12"> CREATE YOUR AD</h1>
 <div class="form-group col-xs-12">
-  <%= form_for @contract_job do |f| %>
+  <%= form_for @job do |f| %>
   
   <%= f.label :title %><br>
   <%= f.text_field :title, class: "form-control input-lg" %>
@@ -19,6 +19,13 @@
   <br>
   <%= f.label :email %>
   <%= f.text_field :email, class: "form-control input-lg" %>
+  <br>
+  <%= f.label :Upload_Your_Logo %>
+  <%= f.file_field :logo, class: "" %>
+  <br>
+  <%= f.label :How_do_applicants_apply? %>
+  <%= f.text_field :applyinfo, class: "form-control input-lg" %>
+  
   
   <script type="text/javascript">
   $(document).ready(function(){
@@ -30,10 +37,10 @@
               var editor = this;
               $(editor.currentView.doc.body).on("keyup",function(event) {
                 var l = event.currentTarget.innerText.length;
-                if(l >= 700) {
-                  $('#count').html('<span class="text-danger">Total characters exceed 700. Extra characters will not be saved.</span>');
+                if(l >= 12000) {
+                  $('#count').html('<span class="text-danger">Total characters exceed 12000. Extra characters will not be saved.</span>');
                 } else {
-                  var left = 700 - l;
+                  var left = 12000 - l;
                   $('#count').html('<span class="text-info">'+ left + ' characters left ' +'</span>');
                 }
               }); 
@@ -53,4 +60,3 @@
   <% end %>
 </div>
 </div>
-
