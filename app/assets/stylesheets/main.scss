@@ -40,6 +40,17 @@ li > .dropdown-menu > li > a {
   // right: 1%;
 }
 
+#payment-head {
+  font-size: 200%;
+  color: #ffffff;
+}
+
+.box-height {
+  height: 50%;
+  color: #ffffff;
+  word-break: normal
+}
+
 
 #home-navtab {
   position: absolute;
@@ -109,7 +120,7 @@ li > .dropdown-menu > li > a {
   margin-right: auto;
 }
 
-#support-btn {
+.support-btn {
   display: block;
   margin-left: auto;
   margin-right: auto;

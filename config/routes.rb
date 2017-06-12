@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'indeed', to: 'indeed#rails'
   
   get 'stackjobs', to: 'stackjobs#rails'
+  
+  get 'main/payment', to: 'main#payment'
 
   resources :contacts, only: [:new, :create]
   

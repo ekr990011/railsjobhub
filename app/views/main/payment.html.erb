@@ -1,0 +1,46 @@
+<div class="col-xs-12">
+  <div class="col-xs-3">
+    <%= image_tag("RailsJobHub.jpg", class: "img-responsive center-block") %>
+  </div>
+  <div class="col-xs-9">
+    <h1 id="payment-head">
+      <span class="red-pill">RailsJobHub</span> is the permiere site to find top-notch Rails and Ruby Developers.  We have tailored 
+      two programs to fit your needs.  One is for short-term well defined projects and the other
+      is for permanent positions.
+    </h1>
+  </div>
+</div> 
+
+<div class="col-xs-12 box-height">
+  <div class="col-xs-6">
+    <h2>Post a Contract Position</h2>
+      <p>
+        This is ideal for short term contract positions, with well defined goals.  
+        Find the perfect person to move your project forward.
+      </p>
+      <ul>
+        <li>Your Post Will be Displayed for <b>7 Days</b></li>
+        <li><b>$19.99 USD</b></li>
+        <li>Prominently Displayed on the Main Job Page</li>
+        <li>Promotion To Social Media And The Developers That Follow Us</li>
+      </ul>
+      <%= button_to "Post a Contract", new_contract_path, class: "btn btn-lg btn-success", method: :get %>
+  </div>
+  <div class="col-xs-6">
+    <h2>Post a Job Position</h2>
+    <p>
+      If you are looking for the ideal candidate for a position at your company, then 
+      this is the perfect solution. 30 days of a premium spot to highlight and intice
+      the right person to your team.
+    </p>
+    <ul>
+      <li>Your Post Will be Displayed for <b>30 Days</em></b>
+      <li><b>$199 USD</b></li>
+      <li>Full Page To Describe Exactly What You Need</li>
+      <li>Your Logo On Display</li>
+      <li>A Specific Spot For How They Contact You</li>
+      <li>Promotion To Social Media And The Developers That Follow Us</li>
+    </ul>
+    <%= button_to "Post a Job", new_job_path, class: "btn btn-lg btn-success", method: :get %>
+  </div>
+</div>
