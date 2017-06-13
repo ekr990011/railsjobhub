@@ -1,7 +1,12 @@
-
 <ul class="row nav nav-tabs navbar-inverse navbar-fixed-top" id="navbar-css">
-  <li id="railsjobhub">
-      <%= link_to  "RailsJobHub", contracts_path %>
+  <li class="navtabs dropdown railsjobhub">
+    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+     RailsJobHub<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li class="railsjobhub"><%= link_to "Jobs", jobs_path %></li>
+      <li class="railsjobhub"><%= link_to "Contracts", contracts_path %></li>
+    </ul>
   </li>
   <li class="navtabs dropdown" id="nav-freelancer">
     <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

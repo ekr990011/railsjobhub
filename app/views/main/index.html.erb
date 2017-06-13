@@ -3,23 +3,30 @@
   <h2 id="main-description">Rails Ruby Webscraping</h2>
 </div>
 <div class="container col-xs-12" id="body-main">
-    <div class="logo col-xs-12 text-center">
-       <%= link_to image_tag('ThumbRailsJobHub.jpg'), "/contracts" %>
-    </div>
+  <ul class="logo">
+       <li class="dropdown">
+         <a id="dLabel" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <%= image_tag('ThumbRailsJobHub.jpg', class: "center-block") %>
+         </a>
+         <ul class="dropdown-menu" aria-labelledby="dLabel">
+           <li class=""><%= link_to "Jobs", jobs_path %></li>
+           <li class=""><%= link_to "Contracts", contracts_path %></li>
+         </ul>
+       </li>
+  </ul>
   
-  
-<ul class="list-inline" id="jobs-list" >
-  <li class="dropdown">
-    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    <%= image_tag('Freelancer.PNG') %>
-    </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><%= link_to "Rails", freelancer_rails_path %></li>
-        <li><%= link_to "Scrape", freelancer_scrape_path %></li>
-      </ul>
-  </li>
-  <li class="dropdown">
-    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <ul class="list-inline" id="jobs-list" >
+    <li class="dropdown">
+      <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <%= image_tag('Freelancer.PNG') %>
+      </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><%= link_to "Rails", freelancer_rails_path %></li>
+          <li><%= link_to "Scrape", freelancer_scrape_path %></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         <%= image_tag('upwork.PNG') %>
       </a>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -27,17 +34,17 @@
         <li><%= link_to "Scrape", upwork_scrape_path %></li>
         <li><%= link_to "Ruby", upwork_ruby_path %></li>
       </ul>
-  </li>
-  <li>
-    <%= link_to image_tag('WeWorkRemotely.jpg'), "/weworkremotely" %>
-  </li>
-  <li>
-    <%= link_to image_tag('Indeed.PNG'), "/indeed" %>
-  </li>
-  <li>
-     <%= link_to image_tag('StackOverflowJobs.PNG'), "/stackjobs" %>
-  </li>
-</ul>
+    </li>
+    <li>
+      <%= link_to image_tag('WeWorkRemotely.jpg'), "/weworkremotely" %>
+    </li>
+    <li>
+      <%= link_to image_tag('Indeed.PNG'), "/indeed" %>
+    </li>
+    <li>
+       <%= link_to image_tag('StackOverflowJobs.PNG'), "/stackjobs" %>
+    </li>
+  </ul>
 </div>
 <div class="col-xs-12" id="bottom-main">
   <%= render 'main/bottom' %>

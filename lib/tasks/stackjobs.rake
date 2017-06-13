@@ -3,8 +3,6 @@ namespace :stack do
   task rails: :environment do
     require 'mechanize'
     
-    
-    
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
     
@@ -32,6 +30,6 @@ namespace :stack do
       @pg += 1
     end  #end while outer
     
-    StackJob.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
+    StackJob.where(created_at: (10.minutes.ago..Time.now)).destroy_all
   end  #end task
 end  #end namespace

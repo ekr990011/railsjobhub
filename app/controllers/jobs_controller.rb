@@ -6,13 +6,13 @@ class JobsController < ApplicationController
     @valid_job_array = []
     @jobs.each do |x|
       if x.expiration.nil?
-      elsif (x.expiration.between?(Time.now, Time.now + 8.days))
-          @valid_jobs_array << x #[x.id, x.title, x.description, x.expiration] 
+      elsif (x.expiration.between?(Time.now, Time.now + 31.days))
+          @valid_job_array << x #[x.id, x.title, x.description, x.expiration] 
       end
     end
-    @valid_array_count_half = @valid_jobs_array.count / 2
-    @valid_array_left = @valid_jobs_array[0...@valid_array_count_half]
-    @valid_array_right = @valid_jobs_array[@valid_array_count_half..-1]
+    @valid_array_count_half = @valid_job_array.count / 2 
+    @valid_array_left = @valid_job_array[0...@valid_array_count_half]
+    @valid_array_right = @valid_job_array[@valid_array_count_half..-1]
   end
   
   def new
