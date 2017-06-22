@@ -10,15 +10,19 @@ namespace :stack do
     
     while @pg < 3
       @page = @a.get("http://stackoverflow.com/jobs/developer-jobs-using-ruby-on-rails?pg=#{@pg}")
-      pp @page
-      @page_job_count = @page.search('div.-job-info').count
+      pp "Made it to page #{@pg}"
+      @page_job_count = @page.search('div.-job-summary').count
       @job_count = 0
       while @job_count < @page_job_count
-        @title = @page.search('div.-job-info > div.-title > h2 > a')[@job_count].text
-        @link = "http://stackoverflow.com" + @page.search('div.-job-info > div.-title > h2 > a')[@job_count].attr('href')
-        @company = @page.search('div.-job-info > div.-meta-wrapper > ul > li')[@job_count].text.strip
-        @skills = @page.search('div.-job-info > div.tags > p')[@job_count].text
-        @date_posted = @page.search('div.-job-info > p')[@job_count].text.strip
+        pp "Made it to job #{@job_count}"
+        @title = @page.search('div.-title > h2 > a')[@job_count].text
+        @link = "http://stackoverflow.com" + @page.search('div.-job-summary > div.-title > h2 > a')[@job_count].attr('href')
+        @company_name = @page.search('div.-company')[0].elements[0].text.strip
+        @company_location = @page.search('div.-company')[0].elements[1].text.strip.gsub(/\W/, '')
+        @company = @company_name + "- " + @company_location
+        @skills = @page.search('div.-job-summary > div.-tags > p')[@job_count].text
+        @date_posted = @page.search('div.-job-summary > .-title > .-posted-date')[@job_count].text.strip
+        
           StackJob.create do |x|
             x.title = @title
             x.link = @link
@@ -26,11 +30,12 @@ namespace :stack do
             x.skills = @skills
             x.date_posted = @date_posted
           end
+          pp "Saved #{@job_count}"
         @job_count += 1
       end  #end while inner
       @pg += 1
     end  #end while outer
     
-    StackJob.where(created_at > 10.minutes.ago).destroy_all
+    StackJob.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end  #end task
 end  #end namespace
