@@ -31,6 +31,6 @@ namespace :stack do
       @pg += 1
     end  #end while outer
     
-    StackJob.where(created_at: (10.minutes.ago..Time.now)).destroy_all
+    StackJob.where(created_at > 10.minutes.ago).destroy_all
   end  #end task
 end  #end namespace
