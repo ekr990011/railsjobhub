@@ -10,6 +10,7 @@ namespace :stack do
     
     while @pg < 3
       @page = @a.get("http://stackoverflow.com/jobs/developer-jobs-using-ruby-on-rails?pg=#{@pg}")
+      pp @page
       @page_job_count = @page.search('div.-job-info').count
       @job_count = 0
       while @job_count < @page_job_count
