@@ -23,14 +23,30 @@ namespace :stack do
         @skills = @page.search('div.-job-summary > div.-tags > p')[@job_count].text
         @date_posted = @page.search('div.-job-summary > .-title > .-posted-date')[@job_count].text.strip
         
-          StackJob.create do |x|
-            x.title = @title
-            x.link = @link
-            x.company = @company
-            x.skills = @skills
-            x.date_posted = @date_posted
+        @description = nil
+        @description_array = []
+        @page2 = @a.get(@link)
+        @page2.search("#overview-items > .-job-description > .description").children.each do |n|
+          @nplus = n.text.strip
+          @description_array << @nplus unless @nplus == ""
+        end
+        @description_array.each do |x|
+          if @description.nil?
+            @description = x
+          else
+            @description = @description + x
           end
-          pp "Saved #{@job_count}"
+        end
+        
+        StackJob.create do |x|
+          x.title = @title
+          x.link = @link
+          x.company = @company
+          x.skills = @skills
+          x.date_posted = @date_posted
+          x.description = @description.truncate(500)
+        end
+        pp "Saved #{@job_count}"
         @job_count += 1
       end  #end while inner
       @pg += 1

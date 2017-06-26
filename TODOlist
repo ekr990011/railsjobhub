@@ -3,3 +3,6 @@ Deal with asckey chars in upwork/ other scrapes, either convert to their symbols
 stripe production setup
 
 charges create page moved to a page that can reload.
+
+
+pagination on contracts/jobs

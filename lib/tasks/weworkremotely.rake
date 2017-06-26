@@ -11,7 +11,7 @@ namespace :wework do
     @rows = @page.search('#category-2 > article > ul > li')
     @row = 0
     while @row < (@rows.count - 1 ) 
-      @link = @rows[@row].at('a').values.first #link rel href
+      @link = "https://weworkremotely.com" + @rows[@row].at('a').values.first #link rel href
       @row_element_count = @rows[@row].search('span').children.count
       @text_count = 0 #counter for row text extraction
       while @text_count < @row_element_count #loop through row elements
@@ -37,11 +37,15 @@ namespace :wework do
         @text_count += 1
         end #end if
       end #end while inner
+      @page2 = @a.get("https://weworkremotely.com" + @rows[@row].at('a').values.first)
+      @description_long = @page2.search('.listing-container').children.text.strip.truncate(500)
+      
       WeworkRail.create do |x|
        x.company = @company
        x.description = @description
        x.date = @date  
-       x.link = ("https://weworkremotely.com" + @link)
+       x.link = @link
+       x.descriptionlong = @description_long
       end #end database creation
     @row += 1
     end #end while outer
