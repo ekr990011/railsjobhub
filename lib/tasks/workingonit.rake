@@ -8,7 +8,7 @@ namespace :work do
     
      @page = @a.get("http://stackoverflow.com/jobs/developer-jobs-using-ruby-on-rails?pg=1")
      
-     @link = "http://stackoverflow.com" + @page.search('div.-job-summary > div.-title > h2 > a')[0].attr('href')
+    @link = "http://stackoverflow.com" + @page.search('div.-job-summary > div.-title > h2 > a')[0].attr('href')
     @description_array = []
     @page2 = @a.get(@link)
     @page2.search("#overview-items > .-job-description > .description").children.each do |n|
