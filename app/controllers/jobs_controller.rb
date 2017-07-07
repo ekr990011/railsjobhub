@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :nav_bar, only: [:index]
+  before_action :nofollow, only: [:new, :create, :edit, :update, :show]
   
   def index
     @jobs = Job.all.reverse_order
@@ -63,4 +64,8 @@ class JobsController < ApplicationController
   def nav_bar
     @nav_bar = 'layouts/nav'
   end
+  
+  def nofollow
+    @nofollow = 1
+  end 
 end

@@ -1,5 +1,6 @@
 class ContractsController < ApplicationController
   before_action :nav_bar, only: [:index]
+  before_action :nofollow, only: [:new, :show, :create, :edit, :update]
   
   def index
     @contracts = Contract.all.reverse_order
@@ -65,4 +66,9 @@ class ContractsController < ApplicationController
   def nav_bar
     @nav_bar = 'layouts/nav'
   end
+  
+  def nofollow
+    @nofollow = 1
+  end 
+  
 end

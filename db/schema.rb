@@ -26,23 +26,10 @@ ActiveRecord::Schema.define(version: 20170626172004) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "expiration"
+    t.date     "expiration"
   end
 
   create_table "freelancerails", force: :cascade do |t|
-    t.string   "title"
-    t.string   "href"
-    t.text     "description"
-    t.string   "bids"
-    t.string   "skills"
-    t.string   "date_start"
-    t.string   "date_finish"
-    t.string   "budget"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "freelancers", force: :cascade do |t|
     t.string   "title"
     t.string   "href"
     t.text     "description"

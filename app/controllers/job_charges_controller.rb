@@ -1,4 +1,6 @@
 class JobChargesController < ApplicationController
+  before_action :nofollow
+  
   def new
     @job_id = Job.find_by_id(session[:job_id])
   end
@@ -36,4 +38,13 @@ class JobChargesController < ApplicationController
   def invoice
     @job_id = Job.find(session[:job_id])
   end
+  
+  private
+  
+  def nofollow
+    @nofollow = 1
+  end  
+  
+  
+  
 end
