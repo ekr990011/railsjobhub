@@ -13,7 +13,7 @@ namespace :github do
     while @job_counter < (@job_count) do
       @job_title = @parsed_job = JSON.parse(@page.body)[@job_counter]["title"]
       @job_link = @parsed_job = JSON.parse(@page.body)[@job_counter]["url"]
-      @job_description = @parsed_job = JSON.parse(@page.body)[@job_counter]["description"]
+      @job_description = @parsed_job = JSON.parse(@page.body)[@job_counter]["description"].truncate(500)
       @job_apply = @parsed_job = JSON.parse(@page.body)[@job_counter]["how_to_apply"]
       @job_company = @parsed_job = JSON.parse(@page.body)[@job_counter]["company"]
       @job_location = @parsed_job = JSON.parse(@page.body)[@job_counter]["location"]

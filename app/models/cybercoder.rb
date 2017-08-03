@@ -1,0 +1,2 @@
+class Cybercoder < ApplicationRecord
+end

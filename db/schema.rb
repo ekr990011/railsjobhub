@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711173634) do
+ActiveRecord::Schema.define(version: 20170731182608) do
+
+  create_table "careerbuilders", force: :cascade do |t|
+    t.string   "job_title"
+    t.text     "job_description"
+    t.string   "job_link"
+    t.string   "job_date"
+    t.string   "job_company"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string   "email"
@@ -27,6 +37,18 @@ ActiveRecord::Schema.define(version: 20170711173634) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.date     "expiration"
+  end
+
+  create_table "cybercoders", force: :cascade do |t|
+    t.string   "job_link"
+    t.string   "job_title"
+    t.string   "job_location"
+    t.string   "job_wage"
+    t.string   "job_time"
+    t.string   "job_skill_array"
+    t.text     "job_description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "freelancerails", force: :cascade do |t|
@@ -90,6 +112,16 @@ ActiveRecord::Schema.define(version: 20170711173634) do
     t.string   "applyinfo"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "remotelyawesomes", force: :cascade do |t|
+    t.string   "job_link"
+    t.string   "job_skills"
+    t.string   "job_title"
+    t.string   "job_comapny"
+    t.text     "job_description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "stack_jobs", force: :cascade do |t|

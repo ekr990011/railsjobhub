@@ -1,0 +1,2 @@
+class Remotelyawesome < ApplicationRecord
+end

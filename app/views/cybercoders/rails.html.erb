@@ -1,0 +1,31 @@
+<div class="left-col col-xs-6">
+  <% @cybercoder_1.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.job_title}", "#{job.job_link}", target: "_blank" %></h3>
+      </span>
+      <div class="col-xs-12 text-center"><p><%= job.job_description.html_safe %></p></div>
+      <span class="col-xs-12 job-skills">
+        <%= job.job_skill_array %>
+      </span>
+      <span class="col-xs-3"><%= job.job_wage %></span>
+      <span class="col-xs-3 job-start"><b><%= job.job_time %></b></span>
+    </div>
+  <% end %>
+</div>
+
+<div class="right-col col-xs-6">
+  <% @cybercoder_2.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.job_title}", "#{job.job_link}", target: "_blank" %></h3>
+      </span>
+      <div class="col-xs-12 text-center"><p><%= job.job_description.html_safe %></p></div>
+      <span class="col-xs-12 job-skills">
+        <%= job.job_skill_array %>
+      </span>
+      <span class="col-xs-3"><%= job.job_wage %></span>
+      <span class="col-xs-3 job-start"><b><%= job.job_time %></b></span>
+    </div>
+  <% end %>
+</div>

@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get 'upwork/ruby', to: 'upwork#ruby'
   
   get 'weworkremotely', to: 'weworkremotely#rails'
-  
   get 'indeed', to: 'indeed#rails'
-  
   get 'stackjobs', to: 'stackjobs#rails'
+  get 'github', to: 'github#rails'
+  get 'cybercoders', to: 'cybercoders#rails'
   
   get 'main/payment', to: 'main#payment'
 

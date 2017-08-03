@@ -1,0 +1,2 @@
+class Careerbuilder < ApplicationRecord
+end

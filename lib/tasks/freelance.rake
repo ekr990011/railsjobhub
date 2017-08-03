@@ -64,6 +64,9 @@ namespace :freelance do
      Freelancerail.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   
   end
+  
+  
+  
   task scrape: :environment do
     
     require 'mechanize'

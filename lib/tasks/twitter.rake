@@ -26,7 +26,8 @@ end
       truncated_tweet = select_tweet_freelancer_rails.truncate(110)
       
       # pp"#{select_tweet_freelancer_rails}"
-      pp"#{truncated_tweet}"
+      pp"#{truncated_tweet}" 
+      pp "freelancerrails"
       # client.update("#{select_tweet_freelancer_rails} https://goo.gl/pqZ8DF ")
       sleep(rand(3..120))
     
@@ -40,8 +41,9 @@ end
       select_tweet_freelancer_scrape = "#{array_freelancer_scrape[random_number_freelance_scrape].title}:  #{array_freelancer_scrape[random_number_freelance_scrape].description}"
       truncated_tweet_freelancer_scrape = select_tweet_freelancer_scrape.truncate(110)
        
-        pp"#{select_tweet_freelancer_scrape}"
+        
         pp"#{truncated_tweet_freelancer_scrape}"
+        pp "freelancerscrape"
         client.update("#{truncated_tweet_freelancer_scrape} https://goo.gl/cYkSdC")
         sleep(rand(3..120))
        
@@ -57,6 +59,7 @@ end
        
         # pp"#{select_tweet_upwork_rails}"
         pp"#{truncated_tweet_upwork_rails}"
+        pp "upworkrails"
         client.update("#{truncated_tweet_upwork_rails} https://goo.gl/U2svdA")
         sleep(rand(3..120))
         
@@ -72,6 +75,7 @@ end
        
         # pp"#{select_tweet_upwork_scrape}"
         pp"#{truncated_tweet_upwork_scrape}"
+        pp "upworkscrape"
         client.update("#{truncated_tweet_upwork_scrape} https://goo.gl/ioT3v8")
         sleep(rand(3..120))
         
@@ -87,6 +91,7 @@ end
        
         # pp"#{select_tweet_upwork_ruby}"
         pp"#{truncated_tweet_upwork_ruby}"
+        pp "upworkruby"
         client.update("#{truncated_tweet_upwork_ruby} https://goo.gl/OJzDtz")
         sleep(rand(3..120))
         
@@ -101,7 +106,8 @@ end
       truncated_tweet_wework = select_tweet_wework.truncate(110)
        
         # pp"#{select_tweet_wework}"
-        #pp"#{truncated_tweet_wework}"
+        pp"#{truncated_tweet_wework}"
+        pp "weworkremotely"
         client.update("#{truncated_tweet_wework} https://goo.gl/d0fvy1")
         sleep(rand(3..120))
        
@@ -117,6 +123,7 @@ end
        
         # pp"#{select_tweet_indeed}"
         pp"#{truncated_tweet_indeed}"
+        pp "indeed"
         client.update("#{truncated_tweet_indeed} https://goo.gl/e7sJbU")
         sleep(rand(3..120))
       
@@ -132,7 +139,57 @@ end
        
         # pp"#{select_tweet_stackjob}"
         pp"#{truncated_tweet_stackjob}"
+        pp "stackjob"
         client.update("#{truncated_tweet_stackjob} https://goo.gl/swR5PL")
+        sleep(rand(3..120))
+        
+        
+         # careerbuilder tweet
+      array_careerbuilder =  Careerbuilder.all
+      
+       max = [5, Careerbuilder.count - 1].min
+      
+      random_number_careerbuilder= rand(0..(max))
+      select_tweet_careerbuilder = "#{array_careerbuilder[random_number_careerbuilder].title}:  #{array_careerbuilder[random_number_careerbuilder].skills}"
+      truncated_tweet_careerbuilder = select_tweet_careerbuilder.truncate(110)
+       
+        # pp"#{select_tweet_careerbuilder}"
+        pp"#{truncated_tweet_careerbuilder}"
+        pp "careerbuilder"
+        client.update("#{truncated_tweet_careerbuilder} https://goo.gl/swR5PL")
+        sleep(rand(3..120))
+        
+        
+        
+          # cybercoders tweet
+      array_cybercoder =  Cybercoder.all
+      
+       max = [5, Cybercoder.count - 1].min
+      
+      random_number_cybercoder = rand(0..(max))
+      select_tweet_cybercoder = "#{array_cybercoder[random_number_cybercoder].title}:  #{array_cybercoder[random_number_cybercoder].skills}"
+      truncated_tweet_cybercoder = select_tweet_cybercoder.truncate(110)
+       
+        # pp"#{select_tweet_cybercoder}"
+        pp"#{truncated_tweet_cybercoder}"
+        pp "cybercoder"
+        client.update("#{truncated_tweet_cybercoder} https://goo.gl/swR5PL")
+        sleep(rand(3..120))
+        
+        
+            # remotelyawesome tweet
+      array_remotelyawesome =  Remotelyawesome.all
+      
+       max = [5, Remotelyawesome.count - 1].min
+      
+      random_number_remotelyawesome = rand(0..(max))
+      select_tweet_remotelyawesome = "#{array_remotelyawesome[random_number_remotelyawesome].title}:  #{array_remotelyawesome[random_number_remotelyawesome].skills}"
+      truncated_tweet_remotelyawesome = select_tweet_remotelyawesome.truncate(110)
+       
+        # pp"#{select_tweet_remotelyawesome}"
+        pp"#{truncated_tweet_remotelyawesome}"
+        pp "remotelyawesome"
+        client.update("#{truncated_tweet_remotelyawesome} https://goo.gl/swR5PL")
         sleep(rand(3..120))
 
 
