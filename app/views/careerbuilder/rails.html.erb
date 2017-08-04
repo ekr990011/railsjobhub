@@ -1,0 +1,25 @@
+<div class="left-col col-xs-6">
+  <% @careerbuilder_1.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.job_title}", "#{job.job_link}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12"><h4><%= job.job_company %></h4></span>
+      <div class="col-xs-12 text-center"><p><%= job.job_description.html_safe %></p></div>
+      <span class="col-xs-3 job-start"><b><%= job.job_date %></b></span>
+    </div>
+  <% end %>
+</div>
+
+<div class="right-col col-xs-6">
+  <% @careerbuilder_2.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.job_title}", "#{job.job_link}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12"><h4><%= job.job_company %></h4></span>
+      <div class="col-xs-12 text-center"><p><%= job.job_description.html_safe %></p></div>
+      <span class="col-xs-3 job-start"><b><%= job.job_date %></b></span>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,23 @@
+<div class="left-col col-xs-6">
+  <% @remotelyawesome_1.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.job_company}", "#{job.job_link}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12 job-description"><%= job.job_description %></span>
+      <span class="col-xs-12 job-skills"><%= job.job_skills %></span>
+    </div>
+  <% end %>
+</div>
+
+<div class="right-col col-xs-6">
+  <% @remotelyawesome_2.each do |job| %>
+    <div class="col-xs-12 box">
+      <span class="col-xs-12 job-title">
+        <h3><%= link_to "#{job.job_company}", "#{job.job_link}", target: "_blank" %></h3>
+      </span>
+      <span class="col-xs-12 job-description"><%= job.job_description %></span>
+      <span class="col-xs-12 job-skills"><%= job.job_skills %></span>
+    </div>
+  <% end %>
+</div>

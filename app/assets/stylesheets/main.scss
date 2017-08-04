@@ -12,11 +12,11 @@
 }
 
 .left-col {
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 .right-col {
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 #navbar-css {
@@ -57,9 +57,9 @@ li > .dropdown-menu > li > a {
 
 
 #home-navtab {
-  position: absolute;
-  top: 0;
-  right: 1%;
+  // position: absolute;
+  // top: 0;
+  // right: 1%;
 }
 
 #nav-freelancer {
@@ -108,6 +108,10 @@ li > .dropdown-menu > li > a {
   // margin: 0 auto;
   text-align: center;
   margin: auto;
+}
+
+.list-inline > li {
+  margin-top: 1%;
 }
 
 #bottom-main {
@@ -187,7 +191,7 @@ li > .dropdown-menu > li > a {
 
 
 .logo {
-  margin-bottom: 2%;
+  // margin-bottom: 2%;
 }
 
 #railsjobhubcenter {

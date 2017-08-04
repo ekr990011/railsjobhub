@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 20170731182608) do
     t.string   "job_link"
     t.string   "job_skills"
     t.string   "job_title"
-    t.string   "job_comapny"
+    t.string   "job_company"
     t.text     "job_description"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

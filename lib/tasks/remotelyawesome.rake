@@ -27,7 +27,7 @@ namespace :remotelyawesome do
         x.job_link = @job_link
         x.job_skills = @job_skill_array
         x.job_title = @job_title
-        x.job_comapny = @job_company
+        x.job_company = @job_company
         x.job_description = @job_description
       end
       

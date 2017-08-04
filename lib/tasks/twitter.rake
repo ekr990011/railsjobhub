@@ -1,6 +1,6 @@
 namespace :twitter do
   desc "Twitter"
-  task tweet: :environment do
+ 
     
     
    require 'twitter'
@@ -15,7 +15,7 @@ end
     
     
     
-    
+  task freelancerails: :environment do
     # Freelancer rails tweet
       array_freelancer_rails = Freelancerail.all
       
@@ -28,10 +28,10 @@ end
       # pp"#{select_tweet_freelancer_rails}"
       pp"#{truncated_tweet}" 
       pp "freelancerrails"
-      # client.update("#{select_tweet_freelancer_rails} https://goo.gl/pqZ8DF ")
-      sleep(rand(3..120))
+      client.update("#{sel sleep(rand(3..120))
+  end
     
-   
+  task freelancescrape: :environment do
     # # Freelancer scrape tweet
       array_freelancer_scrape = Freelancescrape.all
       
@@ -45,9 +45,10 @@ end
         pp"#{truncated_tweet_freelancer_scrape}"
         pp "freelancerscrape"
         client.update("#{truncated_tweet_freelancer_scrape} https://goo.gl/cYkSdC")
-        sleep(rand(3..120))
+  end
        
      
+  task upworkrails: :environment do   
       # Upwork rails tweet
       array_upwork_rails = UpworkRail.all
       
@@ -61,10 +62,11 @@ end
         pp"#{truncated_tweet_upwork_rails}"
         pp "upworkrails"
         client.update("#{truncated_tweet_upwork_rails} https://goo.gl/U2svdA")
-        sleep(rand(3..120))
+  end
         
         
-       # Upwork scrape tweet
+  task upworkscrape: :environment do
+      # Upwork scrape tweet
       array_upwork_scrape = UpworkScrape.all
       
        max = [5, UpworkScrape.count - 1].min
@@ -77,10 +79,11 @@ end
         pp"#{truncated_tweet_upwork_scrape}"
         pp "upworkscrape"
         client.update("#{truncated_tweet_upwork_scrape} https://goo.gl/ioT3v8")
-        sleep(rand(3..120))
+  end
         
         
-       # Upwork ruby tweet
+  task upworkruby: :environment do
+      # Upwork ruby tweet
       array_upwork_ruby = UpworkRuby.all
       
        max = [5, UpworkRuby.count - 1].min
@@ -93,9 +96,10 @@ end
         pp"#{truncated_tweet_upwork_ruby}"
         pp "upworkruby"
         client.update("#{truncated_tweet_upwork_ruby} https://goo.gl/OJzDtz")
-        sleep(rand(3..120))
+  end
         
       
+  task weworkremotely: :environment do
       # WeWorkRemotely tweet
       array_wework = WeworkRail.all
       
@@ -109,9 +113,10 @@ end
         pp"#{truncated_tweet_wework}"
         pp "weworkremotely"
         client.update("#{truncated_tweet_wework} https://goo.gl/d0fvy1")
-        sleep(rand(3..120))
+  end      
        
        
+  task indeed: :environment do
       # Indeed tweet
       array_indeed = IndeedRail.all
       
@@ -125,9 +130,10 @@ end
         pp"#{truncated_tweet_indeed}"
         pp "indeed"
         client.update("#{truncated_tweet_indeed} https://goo.gl/e7sJbU")
-        sleep(rand(3..120))
+ end
       
 
+  task stackjob: :environment do
       # StackJobs tweet
       array_stackjob = StackJob.all
       
@@ -141,59 +147,80 @@ end
         pp"#{truncated_tweet_stackjob}"
         pp "stackjob"
         client.update("#{truncated_tweet_stackjob} https://goo.gl/swR5PL")
-        sleep(rand(3..120))
+  end
+  
+  
+  task github: :environment do
+      # github tweet
+      array_github = Github.all
+      
+       max = [5, Github.count - 1].min
+      
+      random_number_github = rand(0..(max))
+      select_tweet_github = "#{array_github[random_number_github].job_title}:  #{array_github[random_number_github].job_description}"
+      truncated_tweet_github = select_tweet_github.truncate(110)
+       
+        # pp"#{select_tweet_stackjob}"
+        pp"#{truncated_tweet_github}"
+        pp "github"
+        client.update("#{truncated_tweet_stackjob} https://goo.gl/gWf334")
+  end
         
         
+  task careerbuilder: :environment do
          # careerbuilder tweet
       array_careerbuilder =  Careerbuilder.all
       
        max = [5, Careerbuilder.count - 1].min
       
       random_number_careerbuilder= rand(0..(max))
-      select_tweet_careerbuilder = "#{array_careerbuilder[random_number_careerbuilder].title}:  #{array_careerbuilder[random_number_careerbuilder].skills}"
+      select_tweet_careerbuilder = "#{array_careerbuilder[random_number_careerbuilder].job_title}: #{array_careerbuilder[random_number_careerbuilder].job_description}"
       truncated_tweet_careerbuilder = select_tweet_careerbuilder.truncate(110)
        
         # pp"#{select_tweet_careerbuilder}"
         pp"#{truncated_tweet_careerbuilder}"
         pp "careerbuilder"
-        client.update("#{truncated_tweet_careerbuilder} https://goo.gl/swR5PL")
-        sleep(rand(3..120))
+        client.update("#{truncated_tweet_careerbuilder} https://goo.gl/Y5iZBD")
+  end
         
         
         
+  task cybercoder: :environment do
           # cybercoders tweet
       array_cybercoder =  Cybercoder.all
       
        max = [5, Cybercoder.count - 1].min
       
       random_number_cybercoder = rand(0..(max))
-      select_tweet_cybercoder = "#{array_cybercoder[random_number_cybercoder].title}:  #{array_cybercoder[random_number_cybercoder].skills}"
+      select_tweet_cybercoder = "#{array_cybercoder[random_number_cybercoder].job_title}:  #{array_cybercoder[random_number_cybercoder].job_description}"
       truncated_tweet_cybercoder = select_tweet_cybercoder.truncate(110)
        
         # pp"#{select_tweet_cybercoder}"
         pp"#{truncated_tweet_cybercoder}"
         pp "cybercoder"
-        client.update("#{truncated_tweet_cybercoder} https://goo.gl/swR5PL")
-        sleep(rand(3..120))
+        client.update("#{truncated_tweet_cybercoder} https://goo.gl/YGyXdJ")
+  end
         
         
+  task remotelyawesome: :environment do
             # remotelyawesome tweet
       array_remotelyawesome =  Remotelyawesome.all
       
        max = [5, Remotelyawesome.count - 1].min
       
       random_number_remotelyawesome = rand(0..(max))
-      select_tweet_remotelyawesome = "#{array_remotelyawesome[random_number_remotelyawesome].title}:  #{array_remotelyawesome[random_number_remotelyawesome].skills}"
+      select_tweet_remotelyawesome = "#{array_remotelyawesome[random_number_remotelyawesome].job_title}:  #{array_remotelyawesome[random_number_remotelyawesome].job_description}"
       truncated_tweet_remotelyawesome = select_tweet_remotelyawesome.truncate(110)
        
         # pp"#{select_tweet_remotelyawesome}"
         pp"#{truncated_tweet_remotelyawesome}"
         pp "remotelyawesome"
-        client.update("#{truncated_tweet_remotelyawesome} https://goo.gl/swR5PL")
-        sleep(rand(3..120))
+        client.update("#{truncated_tweet_remotelyawesome} https://goo.gl/2fE7xE")
+  end
 
 
 
+  task railsjobhub: :environment do
       # RailsJobHub tweet
       array_railsjobhub = Array.new
       array_railsjobhub << 'Rails Job Hub agregating all the major job sites for Ruby on Rails, Ruby, and Web scraping job postings'
@@ -203,16 +230,8 @@ end
       
   
       random_number_railsjobhub = rand(0..3) 
-      railsjobhubtweet = array_railsjobhub[random_number_railsjobhub]
+     pp railsjobhubtweet = array_railsjobhub[random_number_railsjobhub]
       client.update("#{railsjobhubtweet} https://goo.gl/A6Ulou")
-    
-      
-  
-  
-  
-  
-  end
-
-
+  end 
 
 end

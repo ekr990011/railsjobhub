@@ -5,7 +5,7 @@ class CreateRemotelyawesomes < ActiveRecord::Migration[5.0]
       t.string :job_link
       t.string :job_skills
       t.string :job_title
-      t.string :job_comapny
+      t.string :job_company
       t.text :job_description
       
       t.timestamps

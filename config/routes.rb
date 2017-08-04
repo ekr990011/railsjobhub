@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'stackjobs', to: 'stackjobs#rails'
   get 'github', to: 'github#rails'
   get 'cybercoders', to: 'cybercoders#rails'
+  get 'careerbuilder', to: 'careerbuilder#rails'
+  get 'remotelyawesome', to: 'remotelyawesome#rails'
   
   get 'main/payment', to: 'main#payment'
 
