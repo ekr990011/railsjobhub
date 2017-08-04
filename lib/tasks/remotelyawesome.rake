@@ -33,6 +33,6 @@ namespace :remotelyawesome do
       
       @job_count += 1
     end
-    
+    Remotelyawesome.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end
 end
