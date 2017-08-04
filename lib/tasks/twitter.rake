@@ -28,7 +28,7 @@ end
       # pp"#{select_tweet_freelancer_rails}"
       pp"#{truncated_tweet}" 
       pp "freelancerrails"
-      client.update("#{sel sleep(rand(3..120))
+       client.update("#{truncated_tweet} https://goo.gl/pqZ8DF")
   end
     
   task freelancescrape: :environment do
