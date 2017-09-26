@@ -6,23 +6,30 @@ namespace :work do
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
     
-     @page = @a.get("http://stackoverflow.com/jobs/developer-jobs-using-ruby-on-rails?pg=1")
-     
-    @link = "http://stackoverflow.com" + @page.search('div.-job-summary > div.-title > h2 > a')[0].attr('href')
-    @description_array = []
-    @page2 = @a.get(@link)
-    @page2.search("#overview-items > .-job-description > .description").children.each do |n|
-      @nplus = n.text.strip
-      @description_array << @nplus unless @nplus == ""
-    end
-    @description_array.each do |x|
-      if @description.nil?
-        @description = x
-      else
-        @description = @description + x
+    @page = @a.get('https://www.freelancer.com/jobs/ruby/?cl=l-en&keyword=Ruby%20on%20Rails')
+    @rows = @page.search('#project-list > div') #each job row
+      @count = 0
+      while @rows[@count] != nil do
+        @href = "https://www.freelancer.com" + @rows[@count].at('div.JobSearchCard-primary-heading > a').attr("href")  # href for job
+        @title =  @rows[@count].at('div.JobSearchCard-primary-heading > a').children.text.strip
+        @description = @rows[@count].at('div.JobSearchCard-primary > p').text.strip.tr("\n", "")
+        @bids = @rows[@count].at('div.JobSearchCard-secondary > div.JobSearchCard-secondary-entry').text
+        @skills = @rows[@count].at('div.JobSearchCard-primary > div.JobSearchCard-primary-tags').text.tr("\n", "").squeeze.strip
+        @date = @rows[@count].at('div.JobSearchCard-primary > div.JobSearchCard-primary-heading > span').text
+        @budget = @rows[@count].at('div.JobSearchCard-secondary > div.JobSearchCard-secondary-price').text.tr("\n", "").squeeze.strip
+        
+       
+        Freelancerail.create do |x|
+          x.href = @href
+          x.title = @title
+          x.description = @description
+          x.bids = @bids
+          x.skills = @skills
+          x.date = @date
+          x.budget = @budget
+        end
+        @count += 1
       end
-    end
-    pp @description.truncate(500)
-    
+      
   end
 end

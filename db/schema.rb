@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731182608) do
+ActiveRecord::Schema.define(version: 20170926183547) do
 
   create_table "careerbuilders", force: :cascade do |t|
     t.string   "job_title"
@@ -57,11 +57,10 @@ ActiveRecord::Schema.define(version: 20170731182608) do
     t.text     "description"
     t.string   "bids"
     t.string   "skills"
-    t.string   "date_start"
-    t.string   "date_finish"
     t.string   "budget"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "date"
   end
 
   create_table "freelancescrapes", force: :cascade do |t|
@@ -70,11 +69,10 @@ ActiveRecord::Schema.define(version: 20170731182608) do
     t.text     "description"
     t.string   "bids"
     t.string   "skills"
-    t.string   "date_start"
-    t.string   "date_finish"
     t.string   "budget"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "date"
   end
 
   create_table "githubs", force: :cascade do |t|
