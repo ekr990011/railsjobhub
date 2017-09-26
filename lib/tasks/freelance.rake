@@ -56,9 +56,7 @@ namespace :freelance do
         @count += 1
       end
      Freelancerail.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
-  
   end
-  
   
   
   task scrape: :environment do
@@ -80,7 +78,7 @@ namespace :freelance do
         @budget = @rows[@count].at('div.JobSearchCard-secondary > div.JobSearchCard-secondary-price').text.tr("\n", "").squeeze.strip
         
        
-        Freelancerail.create do |x|
+        Freelancescrape.create do |x|
           x.href = @href
           x.title = @title
           x.description = @description
@@ -104,7 +102,7 @@ namespace :freelance do
         @budget = @rows[@count].at('div.JobSearchCard-secondary > div.JobSearchCard-secondary-price').text.tr("\n", "").squeeze.strip
         
        
-        Freelancerail.create do |x|
+        Freelancescrape.create do |x|
           x.href = @href
           x.title = @title
           x.description = @description
