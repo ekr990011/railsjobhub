@@ -3,6 +3,8 @@ namespace :freelance do
   task rails: :environment do
     require 'mechanize'
     
+    @a = Mechanize.new
+    @a.user_agent_alias = 'Mac Safari 4'
     @page = @a.get('https://www.freelancer.com/jobs/ruby/?cl=l-en&keyword=Ruby%20on%20Rails')
     @rows = @page.search('#project-list > div') #each job row
       @count = 0
