@@ -6,7 +6,7 @@ namespace :work do
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
     
-    @page = @a.get('https://www.freelancer.com/jobs/ruby/?cl=l-en&keyword=Ruby%20on%20Rails')
+    @page = @a.get('https://www.freelancer.com/jobs/regions/?cl=l-en&keyword=webscrape')
     @rows = @page.search('#project-list > div') #each job row
       @count = 0
       while @rows[@count] != nil do
