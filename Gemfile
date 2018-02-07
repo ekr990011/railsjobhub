@@ -48,10 +48,15 @@ gem 'twitter', '~> 5.3.1'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'omniauth-twitter', '~> 1.0.1'
 
+group :test do
+  gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
+  gem 'capybara', '~> 2.17'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 end
 
 group :development do
@@ -62,6 +67,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 end
 
 group :production do
