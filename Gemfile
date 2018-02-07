@@ -23,7 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'carrierwave', '~> 1.0'
 
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.8.1'
 gem 'mechanize'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
