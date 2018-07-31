@@ -1,9 +1,11 @@
 namespace :twitter do
   desc "Twitter"
  
+    console.log ENV["TWITTER"]
     
-    
-   require 'twitter'
+  require 'twitter'
+  
+  # http://www.rubyguides.com/2016/04/twitter-api-from-ruby-tutorial/
  
 client = Twitter::REST::Client.new do |config|
   config.consumer_key        = ENV["CONSUMER_KEY"]
@@ -28,7 +30,7 @@ end
       # pp"#{select_tweet_freelancer_rails}"
       pp"#{truncated_tweet}" 
       pp "freelancerrails"
-       client.update("#{truncated_tweet} https://goo.gl/pqZ8DF")
+      client.update("#{truncated_tweet} https://goo.gl/pqZ8DF")
   end
     
   task freelancescrape: :environment do
@@ -69,7 +71,7 @@ end
       # Upwork scrape tweet
       array_upwork_scrape = UpworkScrape.all
       
-       max = [5, UpworkScrape.count - 1].min
+      max = [5, UpworkScrape.count - 1].min
       
       random_number_upwork_scrape = rand(0..(max))
       select_tweet_upwork_scrape = "#{array_upwork_scrape[random_number_upwork_scrape].title}:  #{array_upwork_scrape[random_number_upwork_scrape].description}"
@@ -86,7 +88,7 @@ end
       # Upwork ruby tweet
       array_upwork_ruby = UpworkRuby.all
       
-       max = [5, UpworkRuby.count - 1].min
+      max = [5, UpworkRuby.count - 1].min
       
       random_number_upwork_ruby = rand(0..(max))
       select_tweet_upwork_ruby = "#{array_upwork_ruby[random_number_upwork_ruby].title}:  #{array_upwork_ruby[random_number_upwork_ruby].description}"
@@ -103,7 +105,7 @@ end
       # WeWorkRemotely tweet
       array_wework = WeworkRail.all
       
-       max = [5, WeworkRail.count - 1].min
+      max = [5, WeworkRail.count - 1].min
       
       random_number_wework = rand(0..(max))
       select_tweet_wework = "#{array_wework[random_number_wework].company}:  #{array_wework[random_number_wework].description}"
@@ -120,7 +122,7 @@ end
       # Indeed tweet
       array_indeed = IndeedRail.all
       
-       max = [5, IndeedRail.count - 1].min
+      max = [5, IndeedRail.count - 1].min
       
       random_number_indeed = rand(0..(max))
       select_tweet_indeed = "#{array_indeed[random_number_indeed].jobtitle}:  #{array_indeed[random_number_indeed].snippet}"
@@ -130,14 +132,14 @@ end
         pp"#{truncated_tweet_indeed}"
         pp "indeed"
         client.update("#{truncated_tweet_indeed} https://goo.gl/e7sJbU")
- end
+end
       
 
   task stackjob: :environment do
       # StackJobs tweet
       array_stackjob = StackJob.all
       
-       max = [5, StackJob.count - 1].min
+      max = [5, StackJob.count - 1].min
       
       random_number_stackjob = rand(0..(max))
       select_tweet_stackjob = "#{array_stackjob[random_number_stackjob].title}:  #{array_stackjob[random_number_stackjob].skills}"
@@ -154,7 +156,7 @@ end
       # github tweet
       array_github = Github.all
       
-       max = [5, Github.count - 1].min
+      max = [5, Github.count - 1].min
       
       random_number_github = rand(0..(max))
       select_tweet_github = "#{array_github[random_number_github].job_title}:  #{array_github[random_number_github].job_description}"
@@ -168,10 +170,10 @@ end
         
         
   task careerbuilder: :environment do
-         # careerbuilder tweet
+        # careerbuilder tweet
       array_careerbuilder =  Careerbuilder.all
       
-       max = [5, Careerbuilder.count - 1].min
+      max = [5, Careerbuilder.count - 1].min
       
       random_number_careerbuilder= rand(0..(max))
       select_tweet_careerbuilder = "#{array_careerbuilder[random_number_careerbuilder].job_title}: #{array_careerbuilder[random_number_careerbuilder].job_description}"
@@ -189,7 +191,7 @@ end
           # cybercoders tweet
       array_cybercoder =  Cybercoder.all
       
-       max = [5, Cybercoder.count - 1].min
+      max = [5, Cybercoder.count - 1].min
       
       random_number_cybercoder = rand(0..(max))
       select_tweet_cybercoder = "#{array_cybercoder[random_number_cybercoder].job_title}:  #{array_cybercoder[random_number_cybercoder].job_description}"
@@ -206,7 +208,7 @@ end
             # remotelyawesome tweet
       array_remotelyawesome =  Remotelyawesome.all
       
-       max = [5, Remotelyawesome.count - 1].min
+      max = [5, Remotelyawesome.count - 1].min
       
       random_number_remotelyawesome = rand(0..(max))
       select_tweet_remotelyawesome = "#{array_remotelyawesome[random_number_remotelyawesome].job_title}:  #{array_remotelyawesome[random_number_remotelyawesome].job_description}"
@@ -230,7 +232,7 @@ end
       
   
       random_number_railsjobhub = rand(0..3) 
-     pp railsjobhubtweet = array_railsjobhub[random_number_railsjobhub]
+    pp railsjobhubtweet = array_railsjobhub[random_number_railsjobhub]
       client.update("#{railsjobhubtweet} https://goo.gl/A6Ulou")
   end 
 
