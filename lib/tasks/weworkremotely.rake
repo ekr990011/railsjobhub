@@ -7,7 +7,7 @@ namespace :wework do
     
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
-    @page = @a.get('https://weworkremotely.com/jobs/search?term=Ruby+on+Rails')
+    @page = @a.get('https://weworkremotely.com/remote-jobs/search?utf8=%E2%9C%93&term=Ruby+on+Rails')
     @rows = @page.search('#category-2 > article > ul > li')
     @row = 0
     while @row < (@rows.count - 1 ) 
