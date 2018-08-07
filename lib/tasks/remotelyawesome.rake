@@ -15,18 +15,11 @@ namespace :remotelyawesome do
     
     pp "job count is #{@job_count_total}"
 
-    while @job_count < 1 #@job_count_total
+    while @job_count < @job_count_total
       puts @job_count
       @job_link = "https://www.remotelyawesomejobs.com" + @page.search('div.jobs-container > ul > li > div.job > h2 > a')[@job_count].attr('href')
-#      puts "Job link #{@job_link}"
-#      @job_skills = @page.search('div.jobs-container > ul > li > div.job > div.tags > div.tags >div.no-break >span.label > a').text
- #     pp @job_skills
-      
+
       @job_page = @a.get(@job_link)
-      
-      @job_page
-      
-      
       
       @job_skill_array = []
       @job_page.search('.job-heading > .tags').children.each do |skill|
