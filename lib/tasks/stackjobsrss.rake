@@ -1,6 +1,6 @@
-namespace :stack do
+namespace :stackjobsrss do
   desc "TODO"
-  task rails: :environment do
+  task rss: :environment do
     require 'open-uri'
     require 'nokogiri'
 
@@ -27,6 +27,6 @@ namespace :stack do
       end
     end
     
-    StackJob.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
-  end  #end task
-end  #end namespace
+    
+  end
+end

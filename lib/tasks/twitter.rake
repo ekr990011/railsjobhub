@@ -1,7 +1,7 @@
 namespace :twitter do
   desc "Twitter"
  
-    console.log ENV["TWITTER"]
+
     
   require 'twitter'
   

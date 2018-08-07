@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 
+gem "feedjira"
 gem 'stripe'
 gem 'bootstrap-wysihtml5-rails'
 
