@@ -7,7 +7,7 @@ namespace :stack do
     url = 'https://stackoverflow.com/jobs/feed?tl=ruby-on-rails'
     open(url) do |rss|
       feed = Nokogiri::XML(rss)
-      puts feed.xpath('//item')[0].each do
+      feed.xpath('//item').each do |item|
         title = item.xpath('title').text
         link = item.xpath('link').text
         company = item.xpath('a10:author').text
