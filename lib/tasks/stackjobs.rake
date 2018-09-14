@@ -1,5 +1,4 @@
 namespace :stack do
-  desc "TODO"
   task rails: :environment do
     require 'open-uri'
     require 'nokogiri'
