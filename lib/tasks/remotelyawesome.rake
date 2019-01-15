@@ -12,6 +12,7 @@ namespace :remotelyawesome do
     job_count = 0 
     job_count_total = page.search('div.jobs-container > ul > li').count
     while job_count < job_count_total
+      sleep 4
       ref_link = page.search('div.jobs-container > ul > li > div.job > h2 > a')[job_count].attr('href')
       if ref_link.slice(0) != "h"
         job_link = "https://www.remotelyawesomejobs.com" + page.search('div.jobs-container > ul > li > div.job > h2 > a')[job_count].attr('href')
