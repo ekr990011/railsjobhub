@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170926183547) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "careerbuilders", force: :cascade do |t|
     t.string   "job_title"
     t.text     "job_description"
