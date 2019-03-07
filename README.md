@@ -1,24 +1,23 @@
-# README
+Rails Job Hub
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run simply clone the project
+git clone git@github.com:ekr990011/railsjobhub.git
 
-Things you may want to cover:
+Then to setup the docker/docker-compose:
+docker-compose build
 
-* Ruby version
+Afterwards to start
+docker-compose up
 
-* System dependencies
+Make sure to on a separate terminal
+docker-compose run web rake db:create
+docker-compose run web rake db:migrate
 
-* Configuration
 
-* Database creation
+If you are on linux make sure all of your files are set to the user in your project.
+Here is a command you can run to make your whole project directory be owned by
+the user:
 
-* Database initialization
+sudo chown -R $USER:$USER .
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The docker container runs as root so any files created by it will also be owned by root so you may need to use that command again upon certain changes.
