@@ -44,9 +44,9 @@ gem "bootstrap-sass", ">= 3.4.1"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'twitter', '~> 5.3.1'
-gem 'omniauth', '~> 1.6', '>= 1.6.1'
-gem 'omniauth-twitter', '~> 1.0.1'
+gem 'twitter', '~> 6.2'
+gem 'omniauth', '~> 1.9'
+gem 'omniauth-twitter', '~> 1.4'
 
 group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'

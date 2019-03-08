@@ -21,3 +21,6 @@ the user:
 sudo chown -R $USER:$USER .
 
 The docker container runs as root so any files created by it will also be owned by root so you may need to use that command again upon certain changes.
+
+The error will usually looks something like this:
+IOError: Can not access file in context:
