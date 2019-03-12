@@ -17,6 +17,7 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'webpacker', '~> 4.0', '>= 4.0.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -29,6 +30,7 @@ gem 'mechanize'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'phantomjs', '~> 2.1', '>= 2.1.1.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -56,7 +58,6 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 end
 
 group :development do
