@@ -20,7 +20,8 @@
 @import "bootstrap";
 @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
 
-html, body, div.container-fluid{
+html, body, .grid{
   height: 100%;
+  width: 100%;
   background-color: #404040; //#1a1a1a;
 }

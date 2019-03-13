@@ -1,3 +1,34 @@
 // Place all the styles related to the home_page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.grid {
+  color: white;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% auto 5%;
+}
+
+.grid__header {
+  background-color: pink;
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.grid__footer {
+  background-color: purple;
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+}
+
+.grid__left {
+  background-color: blue;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.grid__right {
+  background-color: red;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}

@@ -28,11 +28,9 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <% unless @nav_bar == nil %>
-        <%= render @nav_bar %>
-      <% end %>
-        <%= yield %>
-    </div>
+    <% unless @nav_bar == nil %>
+      <%= render @nav_bar %>
+    <% end %>
+    <%= yield %>
   </body>
 </html>
