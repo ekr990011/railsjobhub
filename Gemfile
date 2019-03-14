@@ -13,6 +13,7 @@ gem "feedjira"
 gem 'stripe'
 gem 'bootstrap-wysihtml5-rails'
 
+gem 'webpacker', '~> 4.0', '>= 4.0.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
