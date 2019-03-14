@@ -1,34 +1,53 @@
 // Place all the styles related to the home_page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./job/job.scss";
 
 .grid {
   color: white;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 45% 55%;
   grid-template-rows: 10% auto 5%;
 }
 
 .grid__header {
-  background-color: pink;
+  // background-color: pink;
   grid-column: 1 / 3;
   grid-row: 1 / 2;
+  padding: 5px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 2px 2px 1px 2px;
 }
 
 .grid__footer {
-  background-color: purple;
-  grid-column: 1 / 3;
+  // background-color: purple;
+  grid-column: 2 / 3;
   grid-row: 3 / 4;
+  padding: 2px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px 2px 2px 2px;
 }
 
 .grid__left {
-  background-color: blue;
+  // background-color: blue;
   grid-column: 1 / 2;
-  grid-row: 2 / 3;
+  grid-row: 2 / 4;
+  padding: 5px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px 1px 1px 2px ;
+  overflow-y: auto;
 }
 
 .grid__right {
-  background-color: red;
+  // background-color: red;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  padding: 10px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px 2px 1px 1px;
+  overflow-y: auto;
 }
