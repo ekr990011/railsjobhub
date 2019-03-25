@@ -1,18 +1,26 @@
 <% @github.each do |github| %>
-  <div class="job">
-    <div class="job__title">
-      <h4><%= github.job_title %></h4>
+    <div data-controller="job"
+         data-job-id="<%= github.id %>" data-job-model="Github"
+    >
+      <%= link_to( github_path(github), type: "html",
+                   data: { action: "ajax:success->job#jobClick" },
+                   remote: true ) do %>
+        <div class="job">
+          <div class="job__title">
+            <h4><%= github.job_title %></h4>
+          </div>
+          <div class="job__meta">
+            <div class="job__date">
+              <%= github.job_date %>
+            </div>
+            <div class="job__company">
+              <%= github.job_company %>
+            </div>
+            <div class="job__location">
+              GithubJobs
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <div class="job__meta">
-      <div class="job__date">
-        <%= github.job_date %>
-      </div>
-      <div class="job__company">
-        <%= github.job_company %>
-      </div>
-      <div class="job__location">
-        GithubJobs
-      </div>
-    </div>
-  </div>
 <% end %>
