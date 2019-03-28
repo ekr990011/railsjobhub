@@ -3,7 +3,8 @@
          data-job-id="<%= github.id %>" data-job-model="Github"
     >
       <%= link_to( github_path(github), type: "html",
-                   data: { action: "ajax:success->job#jobClick" },
+                   data: { action: "ajax:success->job#jobClick
+                                    ajax:error->job#jobClickFail" },
                    remote: true ) do %>
         <div class="job">
           <div class="job__title">

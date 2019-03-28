@@ -16,7 +16,7 @@ class GithubController < ApplicationController
   def show
     puts params
     @github = Github.find_by_id(params[:id])
-    render @github
+    render partial: 'job_description'
   end
 
 
