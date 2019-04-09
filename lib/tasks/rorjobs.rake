@@ -1,0 +1,27 @@
+namespace :rorjobs do
+  task rails: :environment do
+    require 'mechanize'
+
+    a = Mechanize.new
+    a.user_agent_alias = 'Mac Safari 4'
+    page = a.get('https://www.rorjobs.com/')
+    page.css('.jobList > .job-listing').each do |job|
+      link = 'https://www.rorjobs.com/'
+      link += job.at('.jobList-title').attr('href')
+      id = link
+      source = "RoRJobs"
+      title = job.at('.jobList-title').text
+      company = job.css('.jobList-introMeta > li')[0].text.strip
+      location = job.css('.jobList-introMeta > li')[1].text.strip
+      date = DateTime.parse(job.at('.jobList-date').text).httpdate
+
+      page2 = a.get(link)
+      skills = ["Ruby on Rails"]
+      page2.search('.u-mt--regular > ul > li').each do |skill|
+        skills << skill.text
+      end
+      description = page2.search('.job-body').inner_html
+    end
+
+  end #end task
+end #end namespace
