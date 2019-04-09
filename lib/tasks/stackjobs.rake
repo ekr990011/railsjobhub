@@ -40,6 +40,5 @@ namespace :stackoverflow do
         end
       end
 
-      # StackJob.where("created_at < ?", (Time.now - 10.minutes)).destroy_all
   end  #end task
 end  #end namespace

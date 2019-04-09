@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'main#index'
   get 'home/index', to: 'home_page#index'
-  get 'home/show', to: 'home_page#show'
+  get 'home/:id', to: 'home_page#show', as: 'home_show'
+
+  # resources :homes, only: [:index, :show]
 
   get 'freelancer/rails', to: 'freelancer#rails'
   get 'freelancer/scrape', to: 'freelancer#scrape'

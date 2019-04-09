@@ -1,18 +1,14 @@
 class HomePageController < ApplicationController
 
   def index
-    @github = Github.all
-    @careerbuilder = Careerbuilder.all
-    @cybercoder = Cybercoder.all
-    @freelancerails = Freelancerail.all
-    @freelancescrapes = Freelancescrape.all
-    @indeedrails = IndeedRail.all
-    @remotelyawesome = Remotelyawesome.all
-    @stackjobs = StackJob.all
-    @upworkrails = UpworkRail.all
-    @upworkruby = UpworkRuby.all
-    @upworkscrapes = UpworkScrape.all
-    @weworkrails = WeworkRail.all
+    @jobs = Scrape.all
+    @job = Scrape.first
+  end
+
+  def show
+    puts params
+    @job = Scrape.find_by_id(params[:id])
+    render partial: 'job_description'
   end
 
 end

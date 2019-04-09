@@ -4,11 +4,9 @@
     <title><%= @location_tab %>| RailsJobHub</title>
     <%= csrf_meta_tags %>
 
-
     <% if @nofollow %>
       <meta name="robots" content="noindex, nofollow">
     <% end %>
-
 
     <% if Rails.env.production? %>
       <script type="text/javascript">
@@ -18,19 +16,17 @@
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-100028364-1', 'auto');
       </script>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-5374261406606651",
+          enable_page_level_ads: true
+        });
+      </script>
     <% end %>
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5374261406606651",
-        enable_page_level_ads: true
-      });
-    </script>
     <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Josefin+Slab:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Revalia" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
