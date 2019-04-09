@@ -9,18 +9,39 @@ namespace :rorjobs do
       link = 'https://www.rorjobs.com/'
       link += job.at('.jobList-title').attr('href')
       id = link
-      source = "RoRJobs"
-      title = job.at('.jobList-title').text
-      company = job.css('.jobList-introMeta > li')[0].text.strip
-      location = job.css('.jobList-introMeta > li')[1].text.strip
-      date = DateTime.parse(job.at('.jobList-date').text).httpdate
 
-      page2 = a.get(link)
-      skills = ["Ruby on Rails"]
-      page2.search('.u-mt--regular > ul > li').each do |skill|
-        skills << skill.text
+      next if Scrape.exists?(job_id: id)
+
+      begin
+        source = "RoRJobs"
+        title = job.at('.jobList-title').text
+        company = job.css('.jobList-introMeta > li')[0].text.strip
+        location = job.css('.jobList-introMeta > li')[1].text.strip
+        date = DateTime.parse(job.at('.jobList-date').text).httpdate
+
+        page2 = a.get(link)
+        skills = ["Ruby on Rails"]
+        page2.search('.u-mt--regular > ul > li').each do |skill|
+          skills << skill.text
+        end
+        description = page2.search('.job-body').inner_html
+
+        Scrape.create do |x|
+          x.job_id = id
+          x.title = title
+          x.link = link
+          x.date = date
+          x.company = company
+          x.location = location
+          x.source = source
+          x.skills = skills
+          x.description = description
+        end
+
+      rescue
+        puts "error in scrape"
+        next
       end
-      description = page2.search('.job-body').inner_html
     end
 
   end #end task
