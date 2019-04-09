@@ -19,9 +19,11 @@
         ga('create', 'UA-100028364-1', 'auto');
       </script>
     <% end %>
-
+    <%= stylesheet_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -35,11 +37,16 @@
   </head>
 
   <body>
-    <div class="container-fluid">
-      <% unless @nav_bar == nil %>
-        <%= render @nav_bar %>
-      <% end %>
-        <%= yield %>
-    </div>
+    <noscript>
+      <style>
+        [data-simplebar] {
+          overflow: auto;
+        }
+      </style>
+    </noscript>
+    <% unless @nav_bar == nil %>
+      <%= render @nav_bar %>
+    <% end %>
+    <%= yield %>
   </body>
 </html>

@@ -14,11 +14,11 @@ gem "feedjira"
 gem 'stripe'
 gem 'bootstrap-wysihtml5-rails'
 
+gem 'webpacker', '~> 4.0', '>= 4.0.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'webpacker', '~> 4.0', '>= 4.0.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -60,6 +60,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pg'
 end
 
 group :development do

@@ -1,0 +1,67 @@
+.job {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-bottom-style: solid;
+  border-bottom-color: #000;
+  border-bottom-width: 2px;
+  border-radius: 10px;
+  padding: 5px;
+  color: #e1e1e1;
+}
+
+.job:hover {
+  background-color: #242323;
+  color: #fff;
+}
+
+.grid__ a:visited {
+  background-color: #242323;
+  color: #fff;
+}
+
+.job__title {
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+  justify-self: center;
+  word-wrap: break-word;
+}
+
+.job__title h4:visited {
+  color: #fff;
+}
+
+.job__title:visited {
+  background-color: #242323;
+  color: #fff;
+}
+
+.job__title h4 {
+  margin: 0px 0px 5px 0px;
+}
+
+.job__meta {
+  grid-column: 1 / 5;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.job__date {
+  grid-column: span 1;
+}
+
+.job__company {
+  grid-column: span 1;
+}
+
+.job__location {
+  grid-column: span 1;
+}
+
+.job__tags {
+  grid-column: span 1;
+}

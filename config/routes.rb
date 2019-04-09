@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'main#index'
   get 'home/index', to: 'home_page#index'
+  get 'home/show', to: 'home_page#show'
 
   get 'freelancer/rails', to: 'freelancer#rails'
   get 'freelancer/scrape', to: 'freelancer#scrape'
@@ -13,7 +14,9 @@ Rails.application.routes.draw do
   get 'weworkremotely', to: 'weworkremotely#rails'
   get 'indeed', to: 'indeed#rails'
   get 'stackjobs', to: 'stackjobs#rails'
-  get 'github', to: 'github#rails'
+  get 'github/:id', to: 'github#show', as: 'github'
+  # get 'github/show', to: 'github#show'
+  # resources :githubs, only: [:show]
   get 'cybercoders', to: 'cybercoders#rails'
   get 'careerbuilder', to: 'careerbuilder#rails'
   get 'remotelyawesome', to: 'remotelyawesome#rails'
