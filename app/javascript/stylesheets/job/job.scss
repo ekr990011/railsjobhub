@@ -15,9 +15,24 @@
   color: #fff;
 }
 
-.grid__ a:visited {
-  background-color: #242323;
-  color: #fff;
+#job_selected {
+  background-color: #151515;
+  color: #eb0000;
+}
+
+#job_selected:hover {
+  background-color: #111111;
+  color: #ff0000;
+}
+
+.job__visited {
+  background-color: #1e1e1e;
+  color: #ff5252;
+}
+
+.job__visited:hover {
+  background-color: #181717;
+  color: #fe2d2d;
 }
 
 .job__title {

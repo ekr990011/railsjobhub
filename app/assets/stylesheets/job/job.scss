@@ -15,16 +15,13 @@
   color: #fff;
 }
 
-.grid__ a:visited {
-  background-color: #242323;
-  color: #fff;
-}
-
 .job__title {
   grid-column: 1 / 5;
   grid-row: 1 / 2;
   justify-self: center;
   word-wrap: break-word;
+  width: 100%;
+  text-align: center;
 }
 
 .job__title h4:visited {

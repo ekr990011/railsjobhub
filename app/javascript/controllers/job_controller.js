@@ -12,13 +12,24 @@ export default class extends Controller {
   }
 
   jobClick(event) {
-    let [data, status, xhr] = event.detail;
+    console.log(event)
+
+    if(document.getElementById('job_selected')) {
+      document.getElementById('job_selected').id = ""
+    }
+
+    event.target.children[0].id ='job_selected'
+    event.target.children[0].classList.add("job__visited")
+  }
+
+  jobAjax(event) {
+    let [data, status, xhr] = event.detail
     let response = xhr.response
     document.getElementById("job_description").innerHTML = response
   }
 
-  jobClickFail(event) {
-    let [data, status, xhr] = event.detail;
+  jobAjaxFail(event) {
+    let [data, status, xhr] = event.detail
     let response = xhr.response
     console.log(response)
   }
