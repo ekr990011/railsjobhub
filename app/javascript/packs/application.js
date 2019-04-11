@@ -17,8 +17,8 @@
 
 // console.log('Hello World from Webpacker')
 
-import "controllers"
 import "stylesheets/application"
+import "controllers"
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
 
