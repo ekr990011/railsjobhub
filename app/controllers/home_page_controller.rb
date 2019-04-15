@@ -1,7 +1,7 @@
 class HomePageController < ApplicationController
 
   def index
-    @jobs = Scrape.all
+    @jobs = Scrape.all.order(date: :desc)
     @job = Scrape.first
   end
 
