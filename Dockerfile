@@ -4,7 +4,6 @@ RUN mkdir /railsjobhub
 WORKDIR /railsjobhub
 COPY Gemfile /railsjobhub/Gemfile
 COPY Gemfile.lock /railsjobhub/Gemfile.lock
-RUN bundle install
 COPY . /myapp
 
 # Node.js
@@ -27,4 +26,4 @@ ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
 # Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "rails", "server", "-b", "0.0.0.0"]

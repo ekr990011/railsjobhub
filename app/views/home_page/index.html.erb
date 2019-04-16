@@ -3,8 +3,18 @@
     RailsJobHub
   </div>
 
-  <div data-target="scrollbar.left" class="grid__left">
+  <div data-target="scrollbar.left"
+       data-action="ps-y-reach-end->scrollbar#scrollBottom"
+       class="grid__left">
     <%= render 'home_page/job_meta' %>
+    <div data-controller="job-meta">
+      <%= button_to( home_index_path, type: "html",
+                   method: :get, params: {page: "2"}, remote: true ) do %>
+        <span class="load__button">
+          Load More Jobs
+        </span>
+      <% end %>
+    </div>
   </div>
 
   <div data-target="scrollbar.right" class="grid__right" id="job_description">

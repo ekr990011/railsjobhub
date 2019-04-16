@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+# source 'http://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -23,6 +24,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+gem 'will_paginate', '~> 3.1.0'
 gem 'carrierwave', '~> 1.0'
 
 gem "nokogiri", ">= 1.8.5"

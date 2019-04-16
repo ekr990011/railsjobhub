@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_023656) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_scrapes_on_date"
   end
 
   create_table "stack_jobs", id: :serial, force: :cascade do |t|
