@@ -1,17 +1,13 @@
-Deal with asckey chars in upwork/ other scrapes, either convert to their symbols or deal with them another way.
-
-stripe production setup
-
+Stripe removed from post a job
 charges create page moved to a page that can reload.
 
+css for load more button plus spinners on grid left/right
 
-pagination on contracts/jobs
+add post a job page
+add contact us page
 
+add search function
 
-github skills?
+put scrapes in background jobs
 
-
-
-URL shortners for twitter rake tasks
-
-We need to uncommment the "client update" when we push things up to Heroku
+fix twitter with updated model
