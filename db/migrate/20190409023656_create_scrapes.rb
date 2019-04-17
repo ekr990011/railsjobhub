@@ -11,7 +11,6 @@ class CreateScrapes < ActiveRecord::Migration[5.2]
       t.string :skills, array: true
       t.text :description
 
-
       t.timestamps
     end
   end

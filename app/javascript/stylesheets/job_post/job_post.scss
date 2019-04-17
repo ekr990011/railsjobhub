@@ -1,0 +1,30 @@
+@import '/trix.css';
+
+.job_post {
+  // background-color: white;
+  grid-column: 1 / 1.5;
+  grid-row: 2 / 4;
+  padding-left: 2px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px 1px 0px 0px ;
+  // overflow-y: auto;
+  // position: relative;
+}
+
+.grid__right_job {
+  // background-color: red;
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+  padding: 6px;
+  padding-left: 15px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px 0px 0px 1px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.trix-button-row > .trix-button-group {
+  background-color: beige;
+}

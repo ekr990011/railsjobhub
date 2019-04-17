@@ -25,6 +25,9 @@
       </script>
     <% end %>
     <%= javascript_pack_tag 'application' %>
+    <% if @trix %>
+      <%= javascript_pack_tag 'trix' %>
+    <% end %>
 
     <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Josefin+Slab:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Revalia" rel="stylesheet">
@@ -33,16 +36,6 @@
   </head>
 
   <body>
-    <noscript>
-      <style>
-        [data-simplebar] {
-          overflow: auto;
-        }
-      </style>
-    </noscript>
-    <% unless @nav_bar == nil %>
-      <%= render @nav_bar %>
-    <% end %>
     <%= yield %>
   </body>
 </html>

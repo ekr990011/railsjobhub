@@ -5,6 +5,7 @@
     "perfect-scrollbar": "^1.4.0",
     "rails-ujs": "^5.2.2-1",
     "stimulus": "^1.1.1",
+    "trix": "^1.1.0",
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {

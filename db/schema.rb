@@ -105,14 +105,20 @@ ActiveRecord::Schema.define(version: 2019_04_09_023656) do
   end
 
   create_table "jobs", id: :serial, force: :cascade do |t|
+    t.string "job_id"
     t.string "title"
-    t.string "email"
+    t.string "link"
+    t.datetime "date"
+    t.string "company"
+    t.string "location"
+    t.string "source"
+    t.string "skills", array: true
     t.text "description"
-    t.string "logo"
-    t.date "expiration"
-    t.string "applyinfo"
+    t.string "email"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_jobs_on_date"
   end
 
   create_table "remotelyawesomes", id: :serial, force: :cascade do |t|
