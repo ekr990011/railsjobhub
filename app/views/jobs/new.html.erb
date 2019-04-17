@@ -5,26 +5,7 @@
 
   <div data-controller="job-post--job-meta" data-target="scrollbar.left"
        class="grid__left">
-    <div>
-      <a href="#" onClick="event.preventDefault()">
-        <span class="job">
-          <span class="job__title">
-            <h4 data-target="job-post--job-meta.title">Your Title Here</h4>
-          </span>
-          <span class="job__meta">
-            <span class="job__date">
-              Today
-            </span>
-            <span class="job__company" data-target="job-post--job-meta.company">
-              Company
-            </span>
-            <span class="job__location" data-target="job-post--job-meta.location">
-              Location
-            </span>
-          </span>
-        </span>
-      </a>
-    </div>
+    <%= render 'jobs/job' %>
     <div class="form-group col-xs-12">
       <%= form_for @job do |f| %>
         <%= f.label :title %><br>
