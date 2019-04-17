@@ -29,7 +29,8 @@
       <%= form_for @job do |f| %>
         <%= f.label :title %><br>
         <%= f.text_field :title, class: "form-control input-lg",
-                         data: {action: 'input->job-post--job-meta#changeTitle'} %>
+                         data: {action: 'input->job-post--job-meta#changeTitle',
+                                target: 'job-post--job-meta.titleFocus'} %>
         <br>
         <%= f.label :email %><br>
         <%= f.text_field :email, class: "form-control input-lg" %>

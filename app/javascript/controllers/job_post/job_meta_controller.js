@@ -1,10 +1,10 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "title", "company", "location" ]
+  static targets = [ "title", "titleFocus", "company", "location" ]
 
   connect() {
-    console.log('hi')
+    this.titleFocusTarget.focus()
   }
 
   changeTitle(event) {
