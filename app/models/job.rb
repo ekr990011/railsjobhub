@@ -1,3 +1,3 @@
 class Job < ApplicationRecord
-  mount_uploader :logo, LogoUploader
+  validates :title, :email, :description, presence: true
 end

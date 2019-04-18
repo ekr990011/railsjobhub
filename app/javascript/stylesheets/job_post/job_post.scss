@@ -1,15 +1,77 @@
 @import '/trix.css';
 
 .job_post {
-  // background-color: white;
-  grid-column: 1 / 1.5;
-  grid-row: 2 / 4;
-  padding-left: 2px;
-  border-style: solid;
-  border-color: grey;
-  border-width: 1px 1px 0px 0px ;
-  // overflow-y: auto;
-  // position: relative;
+  margin-left: 11px;
+}
+
+.job_post__error {
+  color: #ff4242;
+}
+
+.job_post__error_count {
+  margin-top: 10px
+}
+
+.job_post__title {
+  margin-top: 20px;
+}
+
+.job_post__email {
+  margin-top: 20px;
+}
+
+.job_post__company {
+  margin-top: 20px;
+}
+
+.job_post__skills {
+  margin-top: 20px;
+}
+
+.job_post__location {
+  margin-top: 20px;
+}
+
+.job_post__link {
+  margin-top: 20px;
+}
+
+.job_post__price {
+  margin-top: 20px;
+}
+
+.job_post__description {
+  margin-top: 20px;
+}
+
+.job_post__submit {
+  margin-top: 20px;
+  margin-right: 11px;
+}
+
+.trix_editor {
+  height: auto;
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  resize: vertical;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.trix_editor:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
 
 .grid__right_job {

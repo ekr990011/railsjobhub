@@ -26,7 +26,7 @@ export default class extends Controller {
   }
 
   addJobsBefore(event) {
-    console.log(event)
+
   }
 
   addJobsFail() {

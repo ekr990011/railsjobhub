@@ -1,8 +1,6 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  // static targets = [ "description" ]
-
   connect() {
   }
 
@@ -19,6 +17,7 @@ export default class extends Controller {
     let [data, status, xhr] = event.detail
     let response = xhr.response
     document.getElementById("job_description").innerHTML = response
+    this.scrollbarController.scrollTop()
   }
 
   jobAjaxFail(event) {
@@ -26,4 +25,9 @@ export default class extends Controller {
     let response = xhr.response
     console.log(response)
   }
+
+  get scrollbarController() {
+   return this.application.getControllerForElementAndIdentifier(
+     document.getElementById('scrollbar'), "scrollbar")
+ }
 }

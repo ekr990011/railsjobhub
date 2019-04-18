@@ -45,7 +45,7 @@
   grid-row: 1 / 2;
   justify-self: center;
   word-wrap: break-word;
-  font-family: 'Cinzel', serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .job__title h4:visited {
@@ -86,4 +86,14 @@
 
 .job__tags {
   grid-column: span 1;
+}
+
+.load_jobs {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+
+.title_description {
+  margin-bottom: 15px;
 }

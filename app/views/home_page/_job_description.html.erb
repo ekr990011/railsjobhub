@@ -1,3 +1,25 @@
-<div class="job__description">
+<div class="title_description">
+  <h3>
+    <%= @job.title %>
+  </h3>
+  <div class="meta_description">
+    <div>
+      <span>Posted: <%= @job.date %> - </span>
+      <span>Source: <%= @job.source %></span>
+    </div>
+    <div>
+      <span><%= @job.company %> - </span>
+      <span><%= @job.location %></span>
+    </div>
+  </div>
+</div>
+<div class="job__description" data-action="change->scrollbar#scrollTop">
   <%= @job.description.html_safe %>
+</div>
+<div class="text-center">
+  <a href=<%=@job.link%> target="_blank">
+    <button class="btn btn-lg btn-success">
+      Apply Here!
+    </button>
+  </a>
 </div>

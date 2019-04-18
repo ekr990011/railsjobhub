@@ -8,7 +8,7 @@ export default class extends Controller {
     const ps_left = new PerfectScrollbar(this.leftTarget, {
       minScrollbarLength: 60
     });
-    const ps_right = new PerfectScrollbar(this.rightTarget, {
+    this.ps_right = new PerfectScrollbar(this.rightTarget, {
       minScrollbarLength: 60
     });
 
@@ -21,7 +21,12 @@ export default class extends Controller {
     let button = document.getElementsByClassName('load__button')[0]
     if (button) {
       button.parentElement.click()
-      console.log('hi')
     }
   }
+
+  scrollTop() {
+    this.rightTarget.scrollTop = 0
+    this.ps_right.update()
+  }
+
 }

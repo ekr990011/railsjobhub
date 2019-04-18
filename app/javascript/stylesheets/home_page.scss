@@ -43,6 +43,10 @@
   // overflow-x: hidden;
 }
 
+.grid__left > div > a {
+  text-decoration: none;
+}
+
 .grid__right {
   // background-color: red;
   grid-column: 2 / 3;

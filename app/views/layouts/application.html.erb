@@ -24,11 +24,10 @@
         });
       </script>
     <% end %>
-    <%= javascript_pack_tag 'application' %>
-    <% if @trix %>
-      <%= javascript_pack_tag 'trix' %>
-    <% end %>
 
+    <%= javascript_pack_tag 'application' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Josefin+Slab:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Revalia" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
@@ -37,5 +36,10 @@
 
   <body>
     <%= yield %>
+    <div style="display: hidden">
+      <% if @trix %>
+        <%= javascript_pack_tag 'trix' %>
+      <% end %>
+    </div>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<div data-controller="scrollbar" class="grid">
+<div data-controller="scrollbar" class="grid" id="scrollbar">
   <div class="grid__header">
     RailsJobHub
   </div>
@@ -7,9 +7,10 @@
        data-action="ps-y-reach-end->scrollbar#scrollBottom"
        class="grid__left">
     <%= render 'home_page/job_meta' %>
-    <div data-controller="job-meta">
+    <div data-controller="job-meta" class="text-center">
       <%= button_to( home_index_path, type: "html",
-                   method: :get, params: {page: "2"}, remote: true ) do %>
+                   class: "btn btn-lg btn-primary load_jobs",
+                   method: :get, params: {page: "2"}, remote: true) do %>
         <span class="load__button">
           Load More Jobs
         </span>

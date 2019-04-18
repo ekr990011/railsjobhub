@@ -5,48 +5,82 @@
 
   <div data-controller="job-post--job-meta" data-target="scrollbar.left"
        class="grid__left">
-    <%= render 'jobs/job' %>
-    <div class="form-group col-xs-12">
+    <%= render 'jobs/job_post' %>
+    <div class="job_post form-group col-xs-12">
       <%= form_for @job do |f| %>
-        <%= f.label :title %><br>
-        <%= f.text_field :title, class: "form-control input-lg",
-                         data: {action: 'input->job-post--job-meta#changeTitle',
-                                target: 'job-post--job-meta.titleFocus'} %>
-        <br>
-        <%= f.label :email %><br>
-        <%= f.text_field :email, class: "form-control input-lg" %>
-        <br>
-        <%= f.label :Company %>
-        <%= f.text_field :company, class: "form-control input-lg",
-                          data: {action: 'input->job-post--job-meta#changeCompany'}%>
-        <br>
-        <%= f.label :Skills %>
-        <%= f.text_field :skills, class: "form-control input-lg" %>
-        <br>
-        <%= f.label :Location %>
-        <%= f.text_field :location, class: "form-control input-lg",
-                         data: {action: "input->job-post--job-meta#changeLocation"}%>
-        <br>
-        <%= f.label :What_link_do_applicants_apply_with? %>
-        <%= f.text_field :link, class: "form-control input-lg" %>
-        <br>
-        <%= f.label :What_would_you_pay_for_30_days? %>
-        <%= f.number_field :price, class: "form-control input-lg" %>
-        <br>
-        <%= f.label :description %><br>
-        <%= f.hidden_field :description, class: "form-control input-lg", id: "trix" %>
-        <trix-editor input="trix" data-controller="job-post--job-description"
-          data-action="trix-change->job-post--job-description#changeDescription">
-        </trix-editor>
-        <br>
-        <%# f.submit 'Preview', name: 'preview_button'  %>
-        <%= f.submit "Create Job Post", class: "btn btn-primary btn-lg",
+        <% if @job.errors.any? %>
+          <ul class="job_post__error_count">
+            <li class="job_post__error"><%= @job.errors.count %> errors prevented your post!</li>
+          </ul>
+        <% end %>
+        <div class="job_post__title">
+          <%= f.label :title, "Title:" %>
+          <%= f.text_field :title, class: "form-control form-control-sm",
+            data: {action: 'input->job-post--job-meta#changeTitle',
+            target: 'job-post--job-meta.titleFocus'} %>
+          <% if @job.errors[:title].any? %>
+          <div class="job_post__error">
+            Title: <%= @job.errors[:title].first %>
+          </div>
+          <% end %>
+        </div>
+        <div class="job_post__company">
+          <%= f.label :company, "Company:" %>
+          <%= f.text_field :company, class: "form-control form-control-sm",
+          data: {action: 'input->job-post--job-meta#changeCompany'}%>
+        </div>
+        <div class="job_post__location">
+          <%= f.label :location, "Location:" %>
+          <%= f.text_field :location, class: "form-control form-control-sm",
+          data: {action: "input->job-post--job-meta#changeLocation"}%>
+        </div>
+        <div class="job_post__skills">
+          <%= f.label :skills, "Skills. Seperate by commas :" %>
+          <%= f.text_field :skills, class: "form-control form-control-sm" %>
+        </div>
+        <div class="job_post__link">
+          <%= f.label :link, "Link for candidates to apply to:" %>
+          <%= f.text_field :link, class: "form-control form-control-sm" %>
+          <% if @job.errors[:link].any? %>
+          <div class="job_post__error">
+            Link: <%= @job.errors[:link].first %>
+          </div>
+          <% end %>
+        </div>
+        <div class="job_post__email">
+          <%= f.label :email, "Email for if we need to contact you:" %>
+          <%= f.text_field :email, class: "form-control form-control-sm" %>
+          <% if @job.errors[:email].any? %>
+          <div class="job_post__error">
+            Email: <%= @job.errors[:email].first %>
+          </div>
+          <% end %>
+        </div>
+        <div class="job_post__price">
+          <%= f.label :price, "How much would you pay for a month?"%>
+          <%= f.number_field :price, class: "form-control form-control-sm"%>
+        </div>
+        <div class="job_post__description">
+          <%= f.label :description, "Description:" %>
+          <% if @job.errors[:description].any? %>
+          <div class="job_post__error">
+            Description: <%= @job.errors[:description].first %>
+          </div>
+          <% end %>
+          <%= f.hidden_field :description, value: @job.description, id: "trix" %>
+          <trix-editor input="trix" data-controller="job-post--job-description"
+            data-action="trix-change->job-post--job-description#changeDescription"
+            class="trix_editor">
+          </trix-editor>
+        </div>
+        <div class="job_post__submit text-center">
+          <%= f.submit "Create Job Post", class: "btn btn-primary btn-lg",
           data: {confirm: "Everything Look Good?"}%>
+        </div>
       <% end %>
     </div>
   </div>
 
-  <div data-target="scrollbar.right" class="grid__right_job" id="job_description">
-  </div>
+  <%= render 'jobs/job_description' %>
 
 </div>
