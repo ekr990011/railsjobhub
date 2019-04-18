@@ -1,0 +1,29 @@
+<% @rjh_jobs.each do |job| %>
+  <div data-controller="job">
+    <%= link_to( job_path(job), type: "html",
+                 data: { action: "ajax:success->job#jobAjax
+                                  ajax:error->job#jobAjaxFail
+                                  ajax:before->job#jobClick"},
+                 remote: true ) do %>
+      <span class="job">
+        <span class="job__title">
+          <h5><%= job.title %></h5>
+        </span>
+        <span class="job__meta">
+          <span class="job__date">
+            <%= humanDate(job.date) %>
+          </span>
+          <span class="job__company">
+            <%= job.company if job.company %>
+          </span>
+          <span class="job__location">
+            <%= job.location if job.location %>
+          </span>
+          <span class="job__source">
+            <%= job.source %>
+          </span>
+        </span>
+      </span>
+    <% end %>
+  </div>
+<% end %>

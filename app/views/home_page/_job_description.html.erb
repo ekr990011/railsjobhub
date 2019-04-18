@@ -4,8 +4,8 @@
   </h3>
   <div class="meta_description">
     <div>
-      <span>Posted: <%= @job.date %> - </span>
-      <span>Source: <%= @job.source %></span>
+      <span><%= humanDate(@job.date) %> - </span>
+      <span><%= @job.source %></span>
     </div>
     <div>
       <span><%= @job.company %> - </span>

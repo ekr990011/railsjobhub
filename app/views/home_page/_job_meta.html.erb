@@ -1,3 +1,6 @@
+<% if @rjh_jobs %>
+  <%= render 'home_page/rjh_meta' %>
+<% end %>
 <% @jobs.each do |job| %>
     <div data-controller="job" data-job-id="<%= job.id %>">
       <%= link_to( home_show_path(job), type: "html",
@@ -11,13 +14,16 @@
           </span>
           <span class="job__meta">
             <span class="job__date">
-              <%= job.date %>
+              <%= humanDate(job.date) %>
             </span>
             <span class="job__company">
-              <%= job.company %>
+              <%= job.company if job.company %>
             </span>
             <span class="job__location">
-              <%= job.location %>
+              <%= job.location if job.location %>
+            </span>
+            <span class="job__source">
+              <%= job.source %>
             </span>
           </span>
         </span>

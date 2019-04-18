@@ -10,7 +10,7 @@ export default class extends Controller {
   addJobs(event) {
     let [data, status, xhr] = event.detail
     let response = xhr.response
-    if (response.length === 0) {
+    if (response.length === 0 || response.length === 3) {
       event.target.parentElement.innerHTML = "<span>No More To Load!</span>"
     } else {
       // Insert new job results

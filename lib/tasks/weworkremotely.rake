@@ -21,7 +21,8 @@ namespace :weworkremotely do
         page2 = a.get(link)
         date_unformated = page2.at('.listing-header-container > h3 > time').attr("datetime")
         date = DateTime.parse(date_unformated).httpdate
-        location = page2.at('.listing-header-container > h2 > .location').text
+        location = page2.at(
+          '.listing-header-container > h2 > .location').text.sub('Headquarters: ', '')
         description = page2.at('.listing-container').inner_html
         skills = ["Ruby on Rails"]
         source = "WeWorkRemotely"

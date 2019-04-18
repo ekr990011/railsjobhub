@@ -1,15 +1,23 @@
 class HomePageController < ApplicationController
 
   def index
-    puts params
     if params[:page].to_i > 1
-      @jobs = Scrape.paginate(page: params[:page], per_page: 5)
-      puts @jobs.count
-      @job = Scrape.first
+      @jobs = Scrape.paginate(page: params[:page], per_page: 50)
+      if Job.count > 0
+        @rjh_jobs = Job.all.paginate(page: params[:page], per_page: 50)
+        @job = Job.first
+      else
+        @job = Scrape.first
+      end
       render partial: 'job_meta'
     else
-      @jobs = Scrape.paginate(page: params[:page], per_page: 5)
-      @job = Scrape.first
+      @jobs = Scrape.paginate(page: params[:page], per_page: 50)
+      if Job.count > 0
+        @rjh_jobs = Job.all.paginate(page: params[:page], per_page: 50)
+        @job = Job.first
+      else
+        @job = Scrape.first
+      end
     end
   end
 
