@@ -1,7 +1,5 @@
 <div data-controller="scrollbar" class="grid" id="scrollbar">
-  <div class="grid__header">
-    RailsJobHub
-  </div>
+  <%= render 'layouts/header' %>
 
   <div data-target="scrollbar.left"
        data-action="ps-y-reach-end->scrollbar#scrollBottom"
@@ -23,6 +21,20 @@
   </div>
 
   <div class="grid__footer">
-    About
+    <div class="footer_job_post">
+      <%= link_to(new_job_path) do %>
+      <button class="btn btn-sm btn-success">
+        Post a Job for Free!
+      </button>
+      <% end %>
+    </div>
+    <div class="footer_contact">
+      <%= link_to(new_contact_path) do %>
+      <button class="btn btn-sm btn-primary">
+        Contact Us!
+      </button>
+      <% end %>
+    </div>
   </div>
+
 </div>

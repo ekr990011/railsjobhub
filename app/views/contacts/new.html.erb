@@ -1,22 +1,25 @@
+<%= render 'layouts/header' %>
 <%= form_for :contact, url: contacts_path do |f| %>
-<div class="col-xs-12" id="contact-form">
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email, class: "contact-form" %>
-  </p>
-  
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: "contact-form" %>
-  </p>
- 
-  <p id="contact-text">
-    <%= f.label :text %><br>
-    <%= f.text_area :text, class: "contact-form", rows: "6" %>
-  </p>
- 
-  <p>
-    <%= f.submit "Contact Me", id: "contact-submit" %>
-  </p>
+<div class="col-12 form-group" id="contact-form">
+  <div class="col-6 offset-3">
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email, class: "form-control contact-form" %>
+    </p>
+
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control ontact-form" %>
+    </p>
+
+    <p id="contact-text">
+      <%= f.label :text, "Message" %><br>
+      <%= f.text_area :text, class: "form-control contact-form", rows: "6" %>
+    </p>
+
+    <p class="text-center">
+      <%= f.submit "Contact Me", class: "btn btn-lg btn-success" %>
+    </p>
+  </div>
 </div>
 <% end %>
