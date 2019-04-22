@@ -10,6 +10,15 @@ class HomePageController < ApplicationController
         @job = Scrape.first
       end
       render partial: 'job_meta'
+    elsif params[:id]
+      @job = Scrape.find_by_id(params[:id])
+      @jobs = Scrape.where.not(id: params[:id]).first(50)
+      if Job.count > 0
+        @rjh_jobs = Job.first(50)
+        @rjh_jobs.to_a.prepend(@job)
+      else
+        @jobs.to_a.prepend(@job)
+      end
     else
       @jobs = Scrape.paginate(page: params[:page], per_page: 50)
       if Job.count > 0
