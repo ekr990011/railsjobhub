@@ -9,23 +9,14 @@
     <% end %>
 
     <% if Rails.env.production? %>
-      <script type="text/javascript">
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-100028364-1', 'auto');
-      </script>
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-5374261406606651",
-          enable_page_level_ads: true
-        });
-      </script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138906419-1"></script>
     <% end %>
 
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application', async: true %>
+    <% if @trix %>
+      <%= javascript_pack_tag 'trix', async: true %>
+    <% end %>
 
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
@@ -35,10 +26,10 @@
 
   <body>
     <%= yield %>
-    <div style="display: hidden">
-      <% if @trix %>
-        <%= javascript_pack_tag 'trix' %>
-      <% end %>
-    </div>
+
+    <% if Rails.env.production? %>
+      <div data-controller="google-analytics" style="display: hidden">
+      </div>
+    <% end %>
   </body>
 </html>
