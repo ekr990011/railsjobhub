@@ -25,7 +25,7 @@
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 2px;
   border-style: solid;
   border-color: grey;
@@ -34,6 +34,12 @@
 
 .footer_job_post {
   grid-column: span 1;
+}
+
+.footer_favicon {
+  grid-column: span 1;
+  font-size: 9px
+
 }
 
 .footer_contact {

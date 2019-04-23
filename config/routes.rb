@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home_page#index'
-  get 'home/index', to: 'home_page#index'
+  get 'home/index', to: 'home_page#index', as: '/'
   get 'home/:id', to: 'home_page#show', as: 'home_show'
 
   # resources :homes, only: [:index, :show]

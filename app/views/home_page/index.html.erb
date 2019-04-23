@@ -6,7 +6,7 @@
        class="grid__left">
     <%= render 'home_page/job_meta' %>
     <div data-controller="job-meta" class="text-center">
-      <%= button_to( home_index_path, type: "html",
+      <%= button_to( root_path, type: "html",
                    class: "btn btn-lg btn-primary load_jobs",
                    method: :get, params: {page: "2"}, remote: true) do %>
         <span class="load__button">
@@ -20,21 +20,6 @@
     <%= render 'home_page/job_description' %>
   </div>
 
-  <div class="grid__footer">
-    <div class="footer_job_post">
-      <%= link_to(new_job_path) do %>
-      <button class="btn btn-sm btn-success">
-        Post a Job for Free!
-      </button>
-      <% end %>
-    </div>
-    <div class="footer_contact">
-      <%= link_to(new_contact_path) do %>
-      <button class="btn btn-sm btn-primary">
-        Contact Us!
-      </button>
-      <% end %>
-    </div>
-  </div>
+  <%= render 'layouts/footer' %>
 
 </div>

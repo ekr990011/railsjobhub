@@ -13,6 +13,8 @@
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138906419-1"></script>
     <% end %>
 
+    <%= favicon_link_tag asset_pack_path('media/images/ruby.png'), :rel => 'icon', :type =>  'image/png' %>
+
     <%= javascript_pack_tag 'application', async: true %>
     <%= stylesheet_pack_tag 'application', async: true %>
     <% if @trix %>
