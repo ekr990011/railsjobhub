@@ -4,4 +4,11 @@
       <span class="rails">Rails</span><span class="jobhub">JobHub</span>
     </h2>
   <% end %>
+  <div class="search">
+    <%= form_tag search_index_path, method: :get do %>
+      <input type="text" name="query" id="query" placeholder=" I want to find…">
+      <input class="btn btn-sm btn-primary search_button"
+             type="submit" name="commit" value="Search">
+    <% end %>
+  </div>
 </div>

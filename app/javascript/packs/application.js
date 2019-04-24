@@ -17,11 +17,11 @@
 
 // console.log('Hello World from Webpacker')
 
+require.context('../images', true)
 import "stylesheets/application"
 import "controllers"
 import Rails from 'rails-ujs';
 import Turbolinks from 'turbolinks';
-require.context('../images', true)
 
 Rails.start();
 Turbolinks.start();

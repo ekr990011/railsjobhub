@@ -146,6 +146,10 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     pg (1.1.4)
+    pg_search (1.0.6)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.7)
@@ -270,6 +274,7 @@ DEPENDENCIES
   omniauth (~> 1.9)
   omniauth-twitter (~> 1.4)
   pg
+  pg_search (~> 1.0, >= 1.0.5)
   puma (~> 3.0)
   rails (~> 5.2.2)
   rails_12factor
