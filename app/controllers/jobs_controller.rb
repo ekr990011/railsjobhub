@@ -20,7 +20,7 @@ class JobsController < ApplicationController
       @job.update(skills: skills, source: "RailsJobHub",
         date: Time.now.utc, job_id: @job.id)
       session[:job_id] = @job.id
-      redirect_to home_index_path
+      redirect_to root_path
     else
       render :new
     end
