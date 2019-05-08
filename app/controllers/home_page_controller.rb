@@ -11,8 +11,8 @@ class HomePageController < ApplicationController
       end
       render partial: 'job_meta'
     elsif params[:id]
-      @job = Scrape.find_by_id(params[:id])
-      @jobs = Scrape.where.not(id: params[:id]).first(50)
+      @job = Scrape.find_by(job_id: params[:id])
+      @jobs = Scrape.where.not(job_id: params[:id]).first(50)
       if Job.count > 0
         @rjh_jobs = Job.first(50)
         @rjh_jobs.to_a.prepend(@job)
