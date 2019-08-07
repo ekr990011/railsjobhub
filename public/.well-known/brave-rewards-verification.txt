@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: railsjobhub.com
+Token: 930088c497210ef0d9b2eb117a96b71a5d1e21f047c00372b88ccbf0ad4a1882
