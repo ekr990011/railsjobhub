@@ -31,7 +31,7 @@
       <%= stylesheet_pack_tag 'trix', async: true %>
     <% end %>
 
-    <% if @g_ads %>
+    <% if @g_ads && !@nofollow %>
       <script data-ad-client="ca-pub-5374261406606651" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <% end %>
 

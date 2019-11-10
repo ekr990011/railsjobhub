@@ -1,4 +1,5 @@
 class HomePageController < ApplicationController
+  before_action :g_ads
 
   def index
     if params[:page].to_i > 1
@@ -42,6 +43,12 @@ class HomePageController < ApplicationController
     puts params
     @job = Scrape.find_by_id(params[:id])
     render partial: 'job_description'
+  end
+
+  private
+
+  def g_ads
+    @g_ads = true
   end
 
 end

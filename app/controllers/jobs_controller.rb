@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :trix, only: [:new, :show, :create]
   before_action :nofollow, only: [:new, :create, :edit, :update, :show]
+  before_action :g_ads
 
   def new
     @job = Job.new
@@ -40,5 +41,9 @@ class JobsController < ApplicationController
 
   def nofollow
     @nofollow = 1
+  end
+
+  def g_ads
+    @g_ads = false
   end
 end
