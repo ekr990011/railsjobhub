@@ -28,7 +28,7 @@ gem 'sucker_punch'
 gem 'will_paginate', '~> 3.1.0'
 # gem 'carrierwave', '~> 1.0'
 
-gem "nokogiri", ">= 1.8.5"
+gem "nokogiri"
 gem 'mechanize'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -36,7 +36,7 @@ gem 'mechanize'
 # gem 'phantomjs', '~> 2.1', '>= 2.1.1.0'
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+# gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

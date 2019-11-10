@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: localhost
-  username: postgres
+  username: railsjobhub
   password: 123456
   pool: 5
 
