@@ -25,6 +25,7 @@ export default class extends Controller {
   }
 
   scrollTop() {
+    (adsbygoogle = window.adsbygoogle || []).push({});
     this.rightTarget.scrollTop = 0
     this.ps_right.update()
   }

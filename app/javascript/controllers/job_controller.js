@@ -29,5 +29,6 @@ export default class extends Controller {
   get scrollbarController() {
    return this.application.getControllerForElementAndIdentifier(
      document.getElementById('scrollbar'), "scrollbar")
- }
+  }
+
 }

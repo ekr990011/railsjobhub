@@ -7,6 +7,8 @@ export default class extends Controller {
     gtag('js', new Date());
 
     gtag('config', 'UA-138906419-1');
+
+    (adsbygoogle = window.adsbygoogle || []).push({});
   }
 
 }
