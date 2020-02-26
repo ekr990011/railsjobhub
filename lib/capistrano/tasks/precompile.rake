@@ -5,14 +5,14 @@
 
 namespace :assets do
   desc 'Precompile assets locally and then rsync to web servers'
-  Rake::Task['deploy:assets:precompile'].clear_actions
+  # Rake::Task['deploy:assets:precompile'].clear_actions
 
   task :precompile do
     on roles(fetch(:assets_roles)) do
       run_locally do
         with rails_env: fetch(:rails_env) do
           execute 'bin/rake assets:precompile'
-          execute 'gzip -9kvr ./public/'
+          # execute 'gzip -9kvr ./public/'
         end
       end
 

@@ -32,7 +32,7 @@ require 'rvm1/capistrano3'
 require 'capistrano/bundler'
 # require "capistrano/rbenv"
 # require "capistrano/chruby"
-require "capistrano/rails/assets"
+# require "capistrano/rails/assets"
 require "capistrano/rails/migrations"
 # require "capistrano/passenger"
 require "whenever/capistrano"

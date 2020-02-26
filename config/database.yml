@@ -13,7 +13,7 @@ development:
 production:
   <<: *default
   host: 127.0.0.1
-  database: WoWGroups_production
+  database: railsjobhub_production
   password: <%= Rails.application.credentials.postgresql_password %>
 
 

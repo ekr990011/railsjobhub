@@ -42,8 +42,7 @@ set :repo_url, "git@github.com:ekr990011/railsjobhub.git"
 
 # set :rails_env, 'production'
 
-set :assets_prefix, 'prepackaged-assets'
-set :rails_assets_groups, :assets
+set :rails_assets_groups, :web
 
 set :keep_releases, 2
 
