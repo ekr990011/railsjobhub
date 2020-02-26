@@ -35,3 +35,10 @@
 # You can list installed cron jobs using crontab -l.
 #
 # Run whenever --help for a complete list of options for selecting the schedule to use, setting variables in the schedule, etc.
+
+
+every 1.day do # 1.minute 1.day 1.week 1.month 1.year is also supported
+  rake "scrape:rails"
+  rake "scrape:clean"
+  rake "twitter:tweet"
+end

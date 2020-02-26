@@ -29,5 +29,6 @@ namespace :assets do
         # execute :rm, '-rf public/assets'
         execute :rm, '-rf public/packs'
       end
+    end
   end
 end
