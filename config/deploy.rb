@@ -79,7 +79,7 @@ set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/railsjobhub.com/privkey.p
 
 set :linked_files, %w{config/database.yml config/boot.rb config/application.rb}
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
-set :linked_dirs,  %w{bin tmp/pids tmp/cache tmp/sockets} #maybe ./bundle? .bundle
+set :linked_dirs,  %w{bin tmp/pids tmp/cache tmp/sockets public} #maybe ./bundle? .bundle
 
 
 # namespace :puma do
