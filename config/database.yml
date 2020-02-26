@@ -1,16 +1,23 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
   username: railsjobhub
-  password: 123456
   pool: 5
 
 development:
   <<: *default
+  host: localhost
   database: railsjobhub_development
+  password: 123456
+
+production:
+  <<: *default
+  host: 127.0.0.1
+  database: WoWGroups_production
+  password: <%= Rails.application.credentials.postgresql_password %>
 
 
 test:
   <<: *default
   database: railsjobhub_test
+  password: 123456

@@ -55,9 +55,12 @@ gem 'twitter', '~> 6.2'
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-twitter', '~> 1.4'
 
+gem 'whenever', require: false
+
 group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
   gem 'capybara', '~> 2.17'
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 end
 
 group :development, :test do
@@ -74,7 +77,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+
+  gem 'capistrano',         require: false
+  gem 'capistrano-linked-files', require: false
+  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', '~> 1.6', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 group :production do
